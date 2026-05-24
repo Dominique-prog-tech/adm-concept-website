@@ -24,7 +24,14 @@ const allPosts = (await getCollection("blog", ({ data }) => !data.draft))
   .slice(0, 2);
 ---
 
-<BaseLayout title={`${post.data.title} — ADM-Concept`} description={post.data.description}>
+<BaseLayout
+  title={`${post.data.title} — ADM-Concept`}
+  description={post.data.description}
+  ogImage={post.data.image || "/images/office-workspace.jpg"}
+  ogType="article"
+  publishedDate={post.data.pubDate}
+  author={post.data.author}
+>
   <!-- Hero -->
   <section class="py-16 lg:py-20 bg-mesh-1">
     <div class="max-w-4xl mx-auto px-6 lg:px-8">

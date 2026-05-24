@@ -6,12 +6,93 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title?: string;
   description?: string;
+  /** Optional per-page OG image (path from /public, e.g. "/images/foo.jpg") */
+  ogImage?: string;
+  /** Type voor Open Graph: "website" (default) of "article" voor blog-posts */
+  ogType?: "website" | "article";
+  /** Voor blog-posts: publicatiedatum */
+  publishedDate?: Date;
+  /** Voor blog-posts: auteur naam */
+  author?: string;
 }
 
 const {
   title = "ADM-Concept — Maatwerksoftware en digitale platformen",
   description = "Maatwerksoftware en digitale platformen voor bedrijven die efficiënter willen werken. CreditSoft, CleanOps, Nimble en custom oplossingen. 25+ jaar ervaring.",
+  ogImage = "/images/office-workspace.jpg",
+  ogType = "website",
+  publishedDate,
+  author,
 } = Astro.props;
+
+// Build absolute canonical URL from Astro.url
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageUrl = new URL(ogImage, Astro.site).toString();
+
+// JSON-LD: Organization schema voor de hele site
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ADM-Concept",
+  legalName: "ADM-Concept Comm. V",
+  url: "https://www.adm-concept.be",
+  logo: "https://www.adm-concept.be/images/logo.png",
+  description:
+    "Maatwerksoftware en digitale platformen voor bedrijven die efficiënter willen werken.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Zuiderlaan 37 bus 41",
+    postalCode: "8790",
+    addressLocality: "Waregem",
+    addressCountry: "BE",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+32475507937",
+    contactType: "customer service",
+    email: "info@adm-concept.be",
+    areaServed: "BE",
+    availableLanguage: ["Dutch", "French", "English"],
+  },
+  vatID: "BE0681376203",
+  foundingDate: "2000",
+  founders: [
+    {
+      "@type": "Person",
+      name: "Dominique Bernaert",
+    },
+  ],
+  sameAs: [
+    "https://www.linkedin.com/company/adm-concept",
+  ],
+};
+
+// JSON-LD: BlogPosting schema voor blog-pagina's
+const blogPostingSchema = ogType === "article" && publishedDate ? {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: description,
+  image: ogImageUrl,
+  datePublished: publishedDate.toISOString(),
+  dateModified: publishedDate.toISOString(),
+  author: {
+    "@type": "Person",
+    name: author || "Dominique Bernaert",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "ADM-Concept",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.adm-concept.be/images/logo.png",
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": canonicalUrl,
+  },
+} : null;
 ---
 
 <!doctype html>
@@ -23,11 +104,34 @@ const {
     <meta name="description" content={description} />
     <meta name="theme-color" content="#4f46e5" />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="nl_BE" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="ADM-Concept" />
+    {
+      ogType === "article" && publishedDate && (
+        <meta property="article:published_time" content={publishedDate.toISOString()} />
+      )
+    }
+    {ogType === "article" && author && <meta property="article:author" content={author} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- RSS-feed discovery -->
+    <link rel="alternate" type="application/rss+xml" title="ADM-Concept Blog" href="/rss.xml" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,6 +143,16 @@ const {
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+
+    <!-- JSON-LD: Organization (op elke pagina) -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+    <!-- JSON-LD: BlogPosting (alleen op blog-posts) -->
+    {
+      blogPostingSchema && (
+        <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
+      )
+    }
   </head>
   <body class="bg-white text-slate-900 antialiased">
     <Header />
