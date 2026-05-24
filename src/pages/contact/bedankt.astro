@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Bedankt — ADM-Concept"
+  description="Bedankt voor uw bericht. We nemen binnenkort contact met u op."
+>
+  <section class="py-24 lg:py-32 bg-mesh-1">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <div class="w-20 h-20 mx-auto mb-8 rounded-full bg-emerald-100 flex items-center justify-center">
+        <svg
+          class="w-10 h-10 text-emerald-600"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+
+      <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+        Bedankt voor uw bericht!
+      </h1>
+
+      <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+        We hebben uw aanvraag goed ontvangen. U krijgt een bevestiging in uw
+        mailbox en we nemen binnen één werkdag persoonlijk contact met u op.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-4 justify-center">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all shadow-lg"
+        >
+          Terug naar de homepage
+        </a>
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl transition-all"
+        >
+          Lees onze blog
+        </a>
+      </div>
+
+      <div class="mt-16 pt-12 border-t border-slate-200/60">
+        <p class="text-sm text-slate-500 mb-4">Dringende vraag? Bel ons direct:</p>
+        <a
+          href="tel:+32475507937"
+          class="text-2xl font-bold text-slate-900 hover:text-brand-600 transition-colors"
+        >
+          +32 475 50 79 37
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
