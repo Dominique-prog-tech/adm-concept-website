@@ -1,0 +1,203 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contact — ADM-Concept"
+  description="Neem contact op met ADM-Concept. Geen verkooppraatjes — wel een eerlijk gesprek over uw uitdaging."
+>
+  <section class="py-16 lg:py-24 bg-mesh-1">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-block px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700 mb-4">
+          Contact
+        </div>
+        <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Laten we praten.
+        </h1>
+        <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+          Geen verkooppraatjes, geen formulieren-marathon. Stuur ons een mailtje
+          of bel ons direct. We luisteren naar uw uitdaging en bekijken of we
+          kunnen helpen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Contact info -->
+        <div class="lg:col-span-1 space-y-8">
+          <div>
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">E-mail</h3>
+            <a
+              href="mailto:info@adm-concept.be"
+              class="text-lg font-medium text-slate-900 hover:text-brand-600 transition-colors"
+              >info@adm-concept.be</a
+            >
+            <p class="mt-1 text-sm text-slate-500">We antwoorden binnen één werkdag.</p>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Telefoon</h3>
+            <a
+              href="tel:+32475507937"
+              class="text-lg font-medium text-slate-900 hover:text-brand-600 transition-colors"
+              >+32 475 50 79 37</a
+            >
+            <p class="mt-1 text-sm text-slate-500">Bereikbaar op werkdagen, 9–18u.</p>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Adres</h3>
+            <address class="not-italic text-lg text-slate-700 leading-relaxed">
+              ADM-Concept<br />
+              Zuiderlaan 37 bus 41<br />
+              8790 Waregem<br />
+              België
+            </address>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Documentatie</h3>
+            <ul class="space-y-1 text-sm">
+              <li>
+                <a href="https://docs.creditsoft.be" target="_blank" rel="noopener" class="text-slate-700 hover:text-brand-600 transition-colors">docs.creditsoft.be →</a>
+              </li>
+              <li>
+                <a href="https://docs.cleanops.eu" target="_blank" rel="noopener" class="text-slate-700 hover:text-brand-600 transition-colors">docs.cleanops.eu →</a>
+              </li>
+              <li>
+                <a href="https://docs.nimble-erp.eu" target="_blank" rel="noopener" class="text-slate-700 hover:text-brand-600 transition-colors">docs.nimble-erp.eu →</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="lg:col-span-2">
+          <form
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            class="bg-white p-8 lg:p-10 rounded-2xl border border-slate-200 shadow-sm"
+          >
+            <h2 class="text-2xl font-bold text-slate-900 mb-2">Stuur een bericht</h2>
+            <p class="text-sm text-slate-500 mb-8">
+              Vertel ons over uw project of stel een vraag. We reageren snel.
+            </p>
+
+            <div class="space-y-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-slate-700 mb-2">
+                    Naam <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                  />
+                </div>
+                <div>
+                  <label for="company" class="block text-sm font-medium text-slate-700 mb-2">
+                    Bedrijf
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-slate-700 mb-2">
+                    E-mail <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                  />
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-slate-700 mb-2">
+                    Telefoon
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">
+                  Onderwerp
+                </label>
+                <select
+                  id="subject"
+                  name="subject"
+                  class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                >
+                  <option value="">Selecteer een onderwerp</option>
+                  <option value="creditsoft">CreditSoft — kredietbemiddeling</option>
+                  <option value="cleanops">CleanOps — schoonmaak/afvalverwerking</option>
+                  <option value="nimble">Nimble — projectbeheer</option>
+                  <option value="maatwerk">Maatwerksoftware</option>
+                  <option value="anders">Iets anders</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-slate-700 mb-2">
+                  Bericht <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                  placeholder="Vertel ons over uw uitdaging of vraag..."></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button
+                  type="submit"
+                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all shadow-lg hover:shadow-xl"
+                >
+                  Verstuur bericht
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </button>
+                <p class="mt-3 text-xs text-slate-500">
+                  We gebruiken uw gegevens alleen om te reageren op uw bericht.
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

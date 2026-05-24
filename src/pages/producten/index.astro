@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import CTA from "../../components/CTA.astro";
+
+const products = [
+  {
+    name: "CreditSoft",
+    tagline: "Voor kredietmakelaars",
+    description:
+      "Volledig platform voor kredietbemiddeling: dossierbeheer, CRM, commissieadministratie en opvolging na akte. Van eerste contact tot finale uitbetaling.",
+    features: [
+      "Kredietdossiers met workflow-statussen",
+      "LOA en SSV-opvolging",
+      "Commissiebeheer voor tussenpersonen",
+      "Peppol-facturatie ingebouwd",
+    ],
+    href: "/producten/creditsoft",
+    externalDocsUrl: "https://docs.creditsoft.be",
+    color: "blue" as const,
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>`,
+  },
+  {
+    name: "CleanOps",
+    tagline: "Voor schoonmaak- en afvalverwerking",
+    description:
+      "Planning, opdrachten, attesten en facturatie voor schoonmaak- en verwerkingsbedrijven. Beheer contracten en route-planning vanuit één centraal platform.",
+    features: [
+      "Contractbeheer met auto-opdrachten",
+      "Wettelijke verwerkingsattesten",
+      "Planning per ploeg en voertuig",
+      "Boekhouding en aankoopfacturen",
+    ],
+    href: "/producten/cleanops",
+    externalDocsUrl: "https://docs.cleanops.eu",
+    color: "teal" as const,
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>`,
+  },
+  {
+    name: "Nimble",
+    tagline: "Voor projectgebaseerde bedrijven",
+    description:
+      "ERP voor bouw, installatie en projectuitvoering. Projecten, vorderingsstaten, planning en facturatie — alles wat een projectorganisatie nodig heeft.",
+    features: [
+      "Projectbeheer met fases",
+      "Vorderingsstaten en deelfacturen",
+      "Ploegen en tijdsregistratie",
+      "Exact Online integratie",
+    ],
+    href: "/producten/nimble",
+    externalDocsUrl: "https://docs.nimble-erp.eu",
+    color: "purple" as const,
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+  },
+];
+---
+
+<BaseLayout
+  title="Producten — ADM-Concept"
+  description="Drie gespecialiseerde platformen: CreditSoft voor kredietmakelaars, CleanOps voor schoonmaak- en afvalverwerking, Nimble voor projectgebaseerde bedrijven."
+>
+  <section class="py-16 lg:py-24 bg-mesh-1">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-block px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-xs font-semibold text-brand-700 mb-4">
+          Producten
+        </div>
+        <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Bewezen platformen.<br />
+          Sector-specifiek gebouwd.
+        </h1>
+        <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+          Drie producten die ontstaan zijn uit jarenlange samenwerking met klanten
+          in specifieke sectoren. Elk platform combineert sectorkennis met
+          moderne softwaretechnieken.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Past geen van onze platformen?"
+    description="Geen probleem. We bouwen ook maatwerksoftware vanaf nul. Vertel ons over uw uitdaging."
+    buttonText="Bespreek uw project"
+  />
+</BaseLayout>

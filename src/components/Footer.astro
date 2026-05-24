@@ -1,0 +1,79 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-slate-900 text-slate-300 mt-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <div
+            class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold text-sm"
+          >
+            AC
+          </div>
+          <span class="font-bold text-lg text-white">ADM-Concept</span>
+        </div>
+        <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+          Maatwerksoftware en digitale platformen voor bedrijven die
+          efficiënter willen werken. 25+ jaar ervaring in het vertalen
+          van bedrijfsprocessen naar gebruiksvriendelijke software.
+        </p>
+      </div>
+
+      <!-- Producten -->
+      <div>
+        <h3 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Producten</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/producten/creditsoft" class="hover:text-white transition-colors">CreditSoft</a>
+          </li>
+          <li>
+            <a href="/producten/cleanops" class="hover:text-white transition-colors">CleanOps</a>
+          </li>
+          <li>
+            <a href="/producten/nimble" class="hover:text-white transition-colors">Nimble</a>
+          </li>
+          <li>
+            <a href="/diensten" class="hover:text-white transition-colors">Maatwerk op aanvraag</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Contact</h3>
+        <ul class="space-y-2 text-sm">
+          <li class="text-slate-400">
+            Zuiderlaan 37 bus 41<br />
+            8790 Waregem<br />
+            België
+          </li>
+          <li>
+            <a href="tel:+32475507937" class="hover:text-white transition-colors"
+              >+32 475 50 79 37</a
+            >
+          </li>
+          <li>
+            <a
+              href="mailto:info@adm-concept.be"
+              class="hover:text-white transition-colors"
+              >info@adm-concept.be</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500"
+    >
+      <p>&copy; {currentYear} ADM-Concept. Alle rechten voorbehouden.</p>
+      <div class="flex gap-6">
+        <a href="/privacy" class="hover:text-slate-300 transition-colors">Privacy</a>
+        <a href="/voorwaarden" class="hover:text-slate-300 transition-colors">Voorwaarden</a>
+      </div>
+    </div>
+  </div>
+</footer>
