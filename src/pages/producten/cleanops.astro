@@ -4,53 +4,93 @@ import CTA from "../../components/CTA.astro";
 import CleanOpsMockup from "../../components/mockups/CleanOpsMockup.astro";
 
 const modules = [
-  { title: "Werkzaamheden", description: "Contracten, automatische opdrachten-generatie, planning per ploeg en voertuig." },
-  { title: "CRM", description: "Klanten, leveranciers, medewerkers met verloven en saldi." },
-  { title: "Attesten", description: "Wettelijke verwerkingsattesten met producten en verwerkingsbedrijven." },
-  { title: "Facturatie", description: "Offertes, facturen, rappels, openstaande posten, schuldbemiddelingen." },
-  { title: "Boekhouding", description: "Volledige boekhouding inclusief bankverrichtingen en klantenbalans." },
-  { title: "Peppol", description: "E-facturatie via Peppol. Voldoet aan de Belgische verplichting." },
+  {
+    title: "Planning & Dispatch",
+    description:
+      "Dagelijkse en weekplanning van ploegen, real-time locatie en toewijzing van werkorders. Plan onderhoudscontracten en interventies vlot in.",
+  },
+  {
+    title: "Contractbeheer",
+    description:
+      "Offertes met digitale ondertekening. Automatische planning van terugkerende onderhoudswerkzaamheden voor steden, syndicussen en bedrijven.",
+  },
+  {
+    title: "Werkbonnen & camera-inspecties",
+    description:
+      "Documenteer interventies met digitale werkbonnen en cameraverslagen. Wettelijke attesten direct uit het systeem genereren.",
+  },
+  {
+    title: "CRM",
+    description:
+      "Klantenbeheer voor steden, syndicussen, bedrijven en particulieren in één centraal systeem.",
+  },
+  {
+    title: "Facturatie & Peppol",
+    description:
+      "Automatische factuurgeneratie uit werkbonnen, Peppol-verzending, bankintegratie en geautomatiseerd rappelbeheer.",
+  },
+  {
+    title: "Schaalt mee",
+    description:
+      "Geschikt voor bedrijven van 2 tot 20 ploegen. Begin klein, schaal mee naargelang de groei van uw organisatie.",
+  },
+];
+
+const doelgroepen = [
+  "Ruimdiensten en septische putten",
+  "Rioolreiniging en ontstoppingen",
+  "Camera-inspecties",
+  "Onderhoudscontracten voor steden",
+  "Syndicussen en bedrijven",
+  "Particuliere interventies",
 ];
 ---
 
 <BaseLayout
-  title="CleanOps — Platform voor schoonmaak- en afvalverwerking"
-  description="Planning, opdrachten, attesten en facturatie voor schoonmaak- en verwerkingsbedrijven."
+  title="CleanOps — Software voor rioolreiniging en ontstopping"
+  description="Alles-in-één software voor ruimdiensten en rioolbedrijven: planning, werkbonnen, camera-inspecties en facturatie. Voor bedrijven van 2 tot 20 ploegen."
 >
   <section class="py-16 lg:py-24 bg-gradient-to-br from-teal-50 to-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div>
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-teal-500 to-teal-700 text-white flex items-center justify-center shadow-lg">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
-            </svg>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-teal-500 to-teal-700 text-white flex items-center justify-center shadow-lg">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+              </svg>
+            </div>
+            <span class="text-sm font-semibold text-teal-700">PLATFORM</span>
           </div>
-          <span class="text-sm font-semibold text-teal-700">PLATFORM</span>
-        </div>
-        <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-          CleanOps
-        </h1>
-        <p class="mt-3 text-xl font-medium text-slate-600">
-          Het centrale platform voor schoonmaak- en afvalverwerkingsbedrijven.
-        </p>
-        <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-          Beheer contracten, plan opdrachten, registreer attesten, factureer
-          met Peppol. Eén platform, sectorkennis ingebakken, klaar voor de
-          Belgische wetgeving rond afvalverwerking.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all shadow-lg">
-            Vraag een demo
-          </a>
-          <a href="https://docs.cleanops.eu" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl transition-all">
-            Bekijk de documentatie
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-            </svg>
-          </a>
-        </div>
+          <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            CleanOps
+          </h1>
+          <p class="mt-3 text-xl font-medium text-slate-600">
+            Alles-in-één software voor rioolreiniging en ontstopping.
+          </p>
+          <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+            Plan ploegen en voertuigen, volg opdrachten op, documenteer
+            interventies en factureer alles correct. Het operationele platform
+            dat planning, werkbonnen, cameraverslagen en facturatie integreert
+            voor ruimdiensten en rioolbedrijven.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://www.cleanops.eu" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded-xl transition-all shadow-lg">
+              Bezoek cleanops.eu
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl transition-all">
+              Vraag een demo
+            </a>
+            <a href="https://docs.cleanops.eu" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-slate-700 hover:text-slate-900 rounded-xl transition-all">
+              Documentatie
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
         </div>
         <div class="hidden lg:block">
           <CleanOpsMockup />
@@ -59,11 +99,41 @@ const modules = [
     </div>
   </section>
 
+  <!-- Doelgroep -->
+  <section class="py-16 lg:py-24 bg-slate-50/60">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <div class="inline-block px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-xs font-semibold text-teal-700 mb-4">
+          Voor wie
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          Specifiek voor de sector
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          CleanOps is gebouwd in samenwerking met rioolbedrijven en ruimdiensten — geen aanpassen van generieke ERP, wel software die de sector kent.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {doelgroepen.map((d) => (
+          <div class="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-xl">
+            <svg class="w-5 h-5 text-teal-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-slate-800 font-medium">{d}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 lg:py-24">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-2xl mb-12">
+        <div class="inline-block px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-xs font-semibold text-teal-700 mb-4">
+          Functies
+        </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-          Volledig schoonmaakbedrijf-management
+          Alles wat een ruimdienst nodig heeft
         </h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -78,8 +148,8 @@ const modules = [
   </section>
 
   <CTA
-    title="Klaar om uw schoonmaakbedrijf te digitaliseren?"
-    description="We tonen u in een vrijblijvende demo hoe CleanOps uw planning, facturatie en attesten op één plek samenbrengt."
+    title="Klaar om uw ruimdienst te digitaliseren?"
+    description="We tonen u in een vrijblijvende demo hoe CleanOps planning, werkbonnen en facturatie samenbrengt — afgestemd op de praktijk van rioolreiniging."
     buttonText="Plan een demo"
   />
 </BaseLayout>
