@@ -4,7 +4,7 @@ import CTA from "../../components/CTA.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await getCollection("blog", ({ data }) => !data.draft && data.lang === "nl");
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -18,7 +18,7 @@ const formatDate = (date: Date) =>
   date.toLocaleDateString("nl-BE", { day: "numeric", month: "long", year: "numeric" });
 
 // Verkrijg andere posts voor "Lees ook"
-const allPosts = (await getCollection("blog", ({ data }) => !data.draft))
+const allPosts = (await getCollection("blog", ({ data }) => !data.draft && data.lang === "nl"))
   .filter((p) => p.id !== post.id)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 2);

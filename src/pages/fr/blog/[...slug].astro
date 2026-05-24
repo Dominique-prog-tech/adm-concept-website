@@ -4,9 +4,9 @@ import CTA from "../../../components/CTA.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await getCollection("blog", ({ data }) => !data.draft && data.lang === "fr");
   return posts.map((post) => ({
-    params: { slug: post.id },
+    params: { slug: post.id.replace(/^fr\//, "") },
     props: { post },
   }));
 }
@@ -17,8 +17,11 @@ const { Content } = await render(post);
 const formatDate = (date: Date) =>
   date.toLocaleDateString("fr-BE", { day: "numeric", month: "long", year: "numeric" });
 
-// Obtenir d'autres articles pour "À lire aussi"
-const allPosts = (await getCollection("blog", ({ data }) => !data.draft))
+// Strip "fr/" prefix from post.id for URLs.
+const slugOf = (id: string) => id.replace(/^fr\//, "");
+
+// Obtenir d'autres articles FR pour "À lire aussi"
+const allPosts = (await getCollection("blog", ({ data }) => !data.draft && data.lang === "fr"))
   .filter((p) => p.id !== post.id)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 2);
@@ -41,10 +44,6 @@ const allPosts = (await getCollection("blog", ({ data }) => !data.draft))
         </svg>
         Tous les articles
       </a>
-
-      <div class="p-3 mb-6 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-900">
-        Cet article est actuellement disponible uniquement en néerlandais.
-      </div>
 
       {
         post.data.tags.length > 0 && (
@@ -114,7 +113,7 @@ const allPosts = (await getCollection("blog", ({ data }) => !data.draft))
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {allPosts.map((p) => (
               <a
-                href={`/fr/blog/${p.id}`}
+                href={`/fr/blog/${slugOf(p.id)}`}
                 class="group flex gap-4 p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-md transition-all"
               >
                 <div class="flex-1 min-w-0">
