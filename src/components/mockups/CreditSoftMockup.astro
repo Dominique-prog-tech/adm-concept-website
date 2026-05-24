@@ -1,13 +1,18 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 // Mockup specifiek voor CreditSoft: kredietdossier-overzicht
 const dossiers = [
-  { ref: "KD-2026-0142", klant: "Janssens & Partners", bedrag: "€ 285.000", status: "Goedgekeurd", statusColor: "emerald" },
-  { ref: "KD-2026-0141", klant: "De Smedt nv", bedrag: "€ 145.000", status: "In afwerking", statusColor: "amber" },
-  { ref: "KD-2026-0140", klant: "Verhaegen bv", bedrag: "€ 520.000", status: "Ingediend", statusColor: "blue" },
-  { ref: "KD-2026-0139", klant: "Bouwbedrijf Maes", bedrag: "€ 198.500", status: "Goedgekeurd", statusColor: "emerald" },
+  { ref: "KD-2026-0142", klant: t("cs.client1"), bedrag: "€ 285.000", status: t("cs.statusApproved"), statusColor: "emerald" },
+  { ref: "KD-2026-0141", klant: t("cs.client2"), bedrag: "€ 145.000", status: t("cs.statusInProgress"), statusColor: "amber" },
+  { ref: "KD-2026-0140", klant: t("cs.client3"), bedrag: "€ 520.000", status: t("cs.statusSubmitted"), statusColor: "blue" },
+  { ref: "KD-2026-0139", klant: t("cs.client4"), bedrag: "€ 198.500", status: t("cs.statusApproved"), statusColor: "emerald" },
 ];
 
-const tabs = ["Alle (47)", "In afwerking (12)", "Ingediend (8)", "Goedgekeurd (27)"];
+const tabs = [t("cs.tabAll"), t("cs.tabInProgress"), t("cs.tabSubmitted"), t("cs.tabApproved")];
 ---
 
 <div class="relative">
@@ -15,16 +20,16 @@ const tabs = ["Alle (47)", "In afwerking (12)", "Ingediend (8)", "Goedgekeurd (2
 
   <!-- Floating LOA badge -->
   <div class="absolute -top-6 -left-6 w-44 bg-white rounded-xl shadow-xl p-4 z-10 animate-fade-up">
-    <div class="text-xs text-slate-500 mb-1">LOA's lopend</div>
+    <div class="text-xs text-slate-500 mb-1">{t("cs.loaRunning")}</div>
     <div class="flex items-baseline gap-2">
       <div class="text-2xl font-bold text-slate-900">8</div>
-      <div class="text-xs text-amber-600 font-medium">3 vervallen binnen 7d</div>
+      <div class="text-xs text-amber-600 font-medium">{t("cs.loaExpiring")}</div>
     </div>
   </div>
 
   <!-- Floating commissie badge -->
   <div class="absolute -bottom-4 -right-4 w-52 bg-white rounded-xl shadow-xl p-4 z-10 animate-fade-up-delay-2">
-    <div class="text-xs text-slate-500 mb-2">Commissies mei</div>
+    <div class="text-xs text-slate-500 mb-2">{t("cs.commissionsMonth")}</div>
     <div class="text-2xl font-bold text-slate-900">€ 23.847</div>
     <div class="mt-2 flex items-center gap-2">
       <div class="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
@@ -43,16 +48,16 @@ const tabs = ["Alle (47)", "In afwerking (12)", "Ingediend (8)", "Goedgekeurd (2
         <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
         <div class="w-3 h-3 rounded-full bg-green-400"></div>
       </div>
-      <div class="flex-1 mx-4 px-3 py-1 text-xs text-slate-500 bg-white rounded-md border border-slate-200">creditsoft.be / dossiers</div>
+      <div class="flex-1 mx-4 px-3 py-1 text-xs text-slate-500 bg-white rounded-md border border-slate-200">{t("cs.urlPath")}</div>
     </div>
 
     <!-- Header -->
     <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
       <div>
-        <h3 class="text-base font-bold text-slate-900">Kredietdossiers</h3>
-        <p class="text-xs text-slate-500">47 actieve dossiers</p>
+        <h3 class="text-base font-bold text-slate-900">{t("cs.heading")}</h3>
+        <p class="text-xs text-slate-500">{t("cs.activeFiles")}</p>
       </div>
-      <div class="px-3 py-1.5 rounded-md text-xs font-semibold text-white bg-blue-600">+ Nieuw dossier</div>
+      <div class="px-3 py-1.5 rounded-md text-xs font-semibold text-white bg-blue-600">{t("cs.newFile")}</div>
     </div>
 
     <!-- Tabs -->

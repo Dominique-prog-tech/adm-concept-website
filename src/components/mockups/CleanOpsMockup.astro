@@ -1,13 +1,18 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 // Mockup specifiek voor CleanOps: planning-overzicht
 const opdrachten = [
-  { tijd: "08:00", klant: "Residentie Zonnehof", adres: "Gent", ploeg: "A", color: "teal" },
-  { tijd: "10:30", klant: "Kantoor De Brug", adres: "Brugge", ploeg: "B", color: "blue" },
-  { tijd: "13:00", klant: "Industriepark Noord", adres: "Antwerpen", ploeg: "A", color: "teal" },
-  { tijd: "15:30", klant: "Restaurant Bellini", adres: "Mechelen", ploeg: "C", color: "purple" },
+  { tijd: "08:00", klant: t("co.client1"), adres: t("co.city1"), ploeg: "A", color: "teal" },
+  { tijd: "10:30", klant: t("co.client2"), adres: t("co.city2"), ploeg: "B", color: "blue" },
+  { tijd: "13:00", klant: t("co.client3"), adres: t("co.city3"), ploeg: "A", color: "teal" },
+  { tijd: "15:30", klant: t("co.client4"), adres: t("co.city4"), ploeg: "C", color: "purple" },
 ];
 
-const days = ["Ma 26", "Di 27", "Wo 28", "Do 29", "Vr 30"];
+const days = [t("co.day1"), t("co.day2"), t("co.day3"), t("co.day4"), t("co.day5")];
 ---
 
 <div class="relative">
@@ -17,16 +22,16 @@ const days = ["Ma 26", "Di 27", "Wo 28", "Do 29", "Vr 30"];
   <div class="absolute -top-6 -left-6 w-44 bg-white rounded-xl shadow-xl p-4 z-10 animate-fade-up">
     <div class="flex items-center gap-2 mb-1">
       <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
-      <div class="text-xs text-slate-500">Attesten conform</div>
+      <div class="text-xs text-slate-500">{t("co.certificatesOk")}</div>
     </div>
     <div class="text-2xl font-bold text-slate-900">142</div>
-    <div class="text-xs text-slate-500">deze maand</div>
+    <div class="text-xs text-slate-500">{t("co.thisMonth")}</div>
   </div>
 
   <!-- Floating route-badge -->
   <div class="absolute -bottom-4 -right-4 w-52 bg-white rounded-xl shadow-xl p-4 z-10 animate-fade-up-delay-2">
-    <div class="text-xs text-slate-500 mb-1">Route ploeg A</div>
-    <div class="text-lg font-bold text-slate-900">8 opdrachten</div>
+    <div class="text-xs text-slate-500 mb-1">{t("co.routeTeam")}</div>
+    <div class="text-lg font-bold text-slate-900">{t("co.tasks8")}</div>
     <div class="mt-2 flex items-center gap-2 text-xs">
       <svg class="w-4 h-4 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -34,7 +39,7 @@ const days = ["Ma 26", "Di 27", "Wo 28", "Do 29", "Vr 30"];
       </svg>
       <span class="text-slate-700 font-medium">142 km</span>
       <span class="text-slate-400">·</span>
-      <span class="text-slate-500">4u 20m</span>
+      <span class="text-slate-500">{lang === "fr" ? "4 h 20" : "4u 20m"}</span>
     </div>
   </div>
 
@@ -46,14 +51,14 @@ const days = ["Ma 26", "Di 27", "Wo 28", "Do 29", "Vr 30"];
         <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
         <div class="w-3 h-3 rounded-full bg-green-400"></div>
       </div>
-      <div class="flex-1 mx-4 px-3 py-1 text-xs text-slate-500 bg-white rounded-md border border-slate-200">cleanops.eu / planning</div>
+      <div class="flex-1 mx-4 px-3 py-1 text-xs text-slate-500 bg-white rounded-md border border-slate-200">{t("co.urlPath")}</div>
     </div>
 
     <!-- Header -->
     <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
       <div>
-        <h3 class="text-base font-bold text-slate-900">Planning week 22</h3>
-        <p class="text-xs text-slate-500">26 mei — 30 mei 2026</p>
+        <h3 class="text-base font-bold text-slate-900">{t("co.heading")}</h3>
+        <p class="text-xs text-slate-500">{t("co.dateRange")}</p>
       </div>
       <div class="flex items-center gap-2">
         <div class="w-7 h-7 rounded-full bg-teal-100 border-2 border-white text-xs text-teal-700 font-bold flex items-center justify-center">A</div>
