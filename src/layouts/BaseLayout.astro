@@ -2,6 +2,15 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { getLangFromUrl, getAlternateLanguagePath } from "../i18n/ui";
+
+const currentLang = getLangFromUrl(Astro.url);
+const alternateLang = currentLang === "nl" ? "fr" : "nl";
+const alternatePath = getAlternateLanguagePath(Astro.url.pathname, currentLang);
+const alternateUrl = new URL(alternatePath, Astro.site).toString();
+const ogLocale = currentLang === "fr" ? "fr_BE" : "nl_BE";
+const ogLocaleAlt = currentLang === "fr" ? "nl_BE" : "fr_BE";
+const htmlLang = currentLang === "fr" ? "fr-BE" : "nl-BE";
 
 interface Props {
   title?: string;
@@ -99,7 +108,7 @@ const blogPostingSchema = ogType === "article" && publishedDate ? {
 ---
 
 <!doctype html>
-<html lang="nl" class="scroll-smooth">
+<html lang={htmlLang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -110,11 +119,17 @@ const blogPostingSchema = ogType === "article" && publishedDate ? {
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
 
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang={currentLang === "fr" ? "fr-BE" : "nl-BE"} href={canonicalUrl} />
+    <link rel="alternate" hreflang={alternateLang === "fr" ? "fr-BE" : "nl-BE"} href={alternateUrl} />
+    <link rel="alternate" hreflang="x-default" href={currentLang === "nl" ? canonicalUrl : alternateUrl} />
+
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />
-    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />

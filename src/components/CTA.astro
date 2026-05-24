@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 interface Props {
   title?: string;
   description?: string;
@@ -7,10 +12,10 @@ interface Props {
 }
 
 const {
-  title = "Klaar om uw bedrijfsproces te digitaliseren?",
-  description = "Geen verkooppraatje. Een eerlijk gesprek over wat uw bedrijf nodig heeft en hoe we daar samen kunnen geraken.",
-  buttonText = "Plan een gesprek",
-  buttonHref = "/contact",
+  title = t("cta.defaultTitle"),
+  description = t("cta.defaultDescription"),
+  buttonText = t("cta.defaultButton"),
+  buttonHref = t("route.contact"),
 } = Astro.props;
 ---
 

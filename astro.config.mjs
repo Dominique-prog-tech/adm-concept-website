@@ -6,8 +6,25 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.adm-concept.be',
-  integrations: [sitemap()],
+  i18n: {
+    defaultLocale: 'nl',
+    locales: ['nl', 'fr'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'nl',
+        locales: {
+          nl: 'nl-BE',
+          fr: 'fr-BE',
+        },
+      },
+    }),
+  ],
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
 });

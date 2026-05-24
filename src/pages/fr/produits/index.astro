@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductCard from "../../../components/ProductCard.astro";
+import CTA from "../../../components/CTA.astro";
+
+const products = [
+  {
+    name: "CreditSoft",
+    tagline: "Pour les courtiers en crédit professionnels",
+    description:
+      "La plateforme tout-en-un pour l'intermédiation en crédit : gestion des clients, dossiers, gestion bancaire, commissions et prévisions dans un seul système sécurisé.",
+    features: [
+      "Dossiers et gestion bancaire (multi-banques)",
+      "Commissions avec regroupements et bordereaux",
+      "Portail client pour le téléchargement de documents",
+      "Prévisions de revenus par bureau ou apporteur",
+    ],
+    href: "/fr/produits/creditsoft",
+    externalDocsUrl: "https://docs.creditsoft.be",
+    color: "blue" as const,
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>`,
+  },
+  {
+    name: "CleanOps",
+    tagline: "Pour le nettoyage d'égouts et les services de débouchage",
+    description:
+      "Logiciel tout-en-un pour les services de débouchage et les entreprises d'assainissement. Planning, bons de travail, inspections vidéo et facturation sur une seule plateforme.",
+    features: [
+      "Planning et dispatch des équipes",
+      "Bons de travail et rapports vidéo",
+      "Contrats pour villes et syndics",
+      "Facturation Peppol et intégration bancaire",
+    ],
+    href: "/fr/produits/cleanops",
+    externalDocsUrl: "https://docs.cleanops.eu",
+    color: "teal" as const,
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>`,
+  },
+  {
+    name: "Nimble",
+    tagline: "Pour les entreprises orientées projets",
+    description:
+      "ERP pour la construction, l'installation et l'exécution de projets. Projets, états d'avancement, planning et facturation — tout ce dont une organisation projet a besoin.",
+    features: [
+      "Gestion de projet par phases",
+      "États d'avancement et factures partielles",
+      "Équipes et enregistrement du temps",
+      "Intégration Exact Online",
+    ],
+    href: "/fr/produits/nimble",
+    externalDocsUrl: "https://docs.nimble-erp.eu",
+    color: "purple" as const,
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+  },
+];
+---
+
+<BaseLayout
+  title="Produits — ADM-Concept"
+  description="Trois plateformes spécialisées : CreditSoft pour les courtiers en crédit, CleanOps pour le nettoyage et l'assainissement, Nimble pour les entreprises orientées projets."
+>
+  <section class="py-16 lg:py-24 bg-mesh-1">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-block px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-xs font-semibold text-brand-700 mb-4">
+          Produits
+        </div>
+        <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Plateformes éprouvées.<br />
+          Construites pour leur secteur.
+        </h1>
+        <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+          Trois produits nés d'années de collaboration avec des clients dans des
+          secteurs spécifiques. Chaque plateforme combine une connaissance
+          sectorielle approfondie avec des techniques logicielles modernes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Aucune de nos plateformes ne convient ?"
+    description="Pas de problème. Nous développons aussi des logiciels sur mesure à partir de zéro. Parlez-nous de votre défi."
+    buttonText="Discuter de votre projet"
+  />
+</BaseLayout>

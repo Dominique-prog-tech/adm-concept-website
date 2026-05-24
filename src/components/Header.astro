@@ -1,10 +1,16 @@
 ---
+import { getLangFromUrl, useTranslations, getAlternateLanguagePath } from "../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const alternatePath = getAlternateLanguagePath(Astro.url.pathname, lang);
+
 const navItems = [
-  { label: "Producten", href: "/producten" },
-  { label: "Diensten", href: "/diensten" },
-  { label: "Blog", href: "/blog" },
-  { label: "Over ons", href: "/over-ons" },
-  { label: "Contact", href: "/contact" },
+  { label: t("nav.products"), href: t("route.products") },
+  { label: t("nav.services"), href: t("route.services") },
+  { label: t("nav.blog"), href: t("route.blog") },
+  { label: t("nav.about"), href: t("route.about") },
+  { label: t("nav.contact"), href: t("route.contact") },
 ];
 ---
 
@@ -14,7 +20,7 @@ const navItems = [
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group" aria-label="ADM-Concept homepage">
+      <a href={t("route.home")} class="flex items-center gap-3 group" aria-label="ADM-Concept homepage">
         <img
           src="/images/logo.png"
           alt="ADM-Concept"
@@ -38,13 +44,21 @@ const navItems = [
         }
       </nav>
 
-      <!-- CTA + mobile menu trigger -->
+      <!-- CTA + language switcher + mobile menu trigger -->
       <div class="flex items-center gap-3">
         <a
-          href="/contact"
+          href={alternatePath}
+          class="hidden sm:inline-flex items-center px-2.5 py-1 text-xs font-semibold text-slate-600 hover:text-brand-600 border border-slate-300 hover:border-brand-600 rounded-md transition-colors"
+          aria-label={t("lang.label")}
+        >
+          {t("lang.switch")}
+        </a>
+
+        <a
+          href={t("route.contact")}
           class="hidden sm:inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 rounded-lg transition-colors shadow-sm hover:shadow-md"
         >
-          Vraag offerte
+          {t("nav.requestQuote")}
           <svg
             class="w-4 h-4"
             fill="none"
@@ -59,7 +73,7 @@ const navItems = [
         <button
           id="mobile-menu-toggle"
           class="md:hidden p-2 text-slate-700 hover:text-slate-900"
-          aria-label="Menu openen"
+          aria-label={t("nav.openMenu")}
         >
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -82,10 +96,17 @@ const navItems = [
           ))
         }
         <a
-          href="/contact"
+          href={alternatePath}
+          class="text-sm font-medium text-slate-500 hover:text-brand-600 transition-colors py-2"
+          aria-label={t("lang.label")}
+        >
+          {t("lang.switch")}
+        </a>
+        <a
+          href={t("route.contact")}
           class="mt-2 inline-flex items-center justify-center gap-1 px-4 py-2 text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 rounded-lg transition-colors"
         >
-          Vraag offerte
+          {t("nav.requestQuote")}
         </a>
       </nav>
     </div>

@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const currentYear = new Date().getFullYear();
 
 const socials = [
@@ -38,9 +43,7 @@ const socials = [
           />
         </div>
         <p class="text-sm text-slate-400 max-w-md leading-relaxed">
-          Maatwerksoftware en digitale platformen voor bedrijven die
-          efficiënter willen werken. 25+ jaar ervaring in het vertalen
-          van bedrijfsprocessen naar gebruiksvriendelijke software.
+          {t("footer.tagline")}
         </p>
         <p class="text-xs text-slate-500 mt-3">
           ADM-Concept Comm. V — BE 0681.376.203
@@ -66,34 +69,34 @@ const socials = [
 
       <!-- Producten -->
       <div>
-        <h3 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Producten</h3>
+        <h3 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider">{t("footer.productsHeading")}</h3>
         <ul class="space-y-2 text-sm">
           <li>
-            <a href="/producten/creditsoft" class="hover:text-white transition-colors">CreditSoft</a>
+            <a href={`${t("route.products")}/creditsoft`} class="hover:text-white transition-colors">CreditSoft</a>
           </li>
           <li>
-            <a href="/producten/cleanops" class="hover:text-white transition-colors">CleanOps</a>
+            <a href={`${t("route.products")}/cleanops`} class="hover:text-white transition-colors">CleanOps</a>
           </li>
           <li>
-            <a href="/producten/nimble" class="hover:text-white transition-colors">Nimble</a>
+            <a href={`${t("route.products")}/nimble`} class="hover:text-white transition-colors">Nimble</a>
           </li>
           <li>
-            <a href="/diensten" class="hover:text-white transition-colors">Maatwerk op aanvraag</a>
+            <a href={t("route.services")} class="hover:text-white transition-colors">{t("footer.customDev")}</a>
           </li>
           <li>
-            <a href="/blog" class="hover:text-white transition-colors">Blog</a>
+            <a href={t("route.blog")} class="hover:text-white transition-colors">{t("footer.blog")}</a>
           </li>
         </ul>
       </div>
 
       <!-- Contact -->
       <div>
-        <h3 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Contact</h3>
+        <h3 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider">{t("footer.contactHeading")}</h3>
         <ul class="space-y-2 text-sm">
           <li class="text-slate-400">
             Zuiderlaan 37 bus 41<br />
             8790 Waregem<br />
-            België
+            {lang === "fr" ? "Belgique" : "België"}
           </li>
           <li>
             <a href="tel:+32475507937" class="hover:text-white transition-colors"
@@ -114,9 +117,9 @@ const socials = [
     <div
       class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500"
     >
-      <p>&copy; {currentYear} ADM-Concept. Alle rechten voorbehouden.</p>
+      <p>&copy; {currentYear} ADM-Concept. {t("footer.copyright")}</p>
       <div class="flex gap-6">
-        <a href="/privacy" class="hover:text-slate-300 transition-colors">Privacy</a>
+        <a href={t("route.privacy")} class="hover:text-slate-300 transition-colors">{t("footer.privacy")}</a>
       </div>
     </div>
   </div>

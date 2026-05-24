@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 interface Props {
   name: string;
   tagline: string;
@@ -64,7 +69,7 @@ const borderColorClasses = {
       href={href}
       class="inline-flex items-center gap-1 text-sm font-semibold text-slate-900 hover:text-brand-600 transition-colors"
     >
-      Meer info
+      {t("product.moreInfo")}
       <svg
         class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
         fill="none"
@@ -83,7 +88,7 @@ const borderColorClasses = {
           rel="noopener"
           class="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-slate-700 transition-colors"
         >
-          Documentatie
+          {t("product.documentation")}
           <svg
             class="w-3.5 h-3.5"
             fill="none"

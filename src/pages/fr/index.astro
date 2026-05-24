@@ -1,0 +1,270 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DashboardMockup from "../../components/DashboardMockup.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import CTA from "../../components/CTA.astro";
+
+const products = [
+  {
+    name: "CreditSoft",
+    tagline: "Pour les courtiers en crédit professionnels",
+    description:
+      "La plateforme tout-en-un pour l'intermédiation en crédit : gestion des clients, dossiers, gestion bancaire, commissions et prévisions dans un seul système sécurisé.",
+    features: [
+      "Dossiers et gestion bancaire (multi-banques)",
+      "Commissions avec regroupements et bordereaux",
+      "Portail client pour le téléchargement de documents",
+      "Prévisions de revenus par bureau ou apporteur",
+    ],
+    href: "/fr/produits/creditsoft",
+    externalDocsUrl: "https://docs.creditsoft.be",
+    color: "blue" as const,
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>`,
+  },
+  {
+    name: "CleanOps",
+    tagline: "Pour le nettoyage d'égouts et les services de débouchage",
+    description:
+      "Logiciel tout-en-un pour les services de débouchage et les entreprises d'assainissement. Planning, bons de travail, inspections vidéo et facturation sur une seule plateforme.",
+    features: [
+      "Planning et dispatch des équipes",
+      "Bons de travail et rapports vidéo",
+      "Contrats pour villes et syndics",
+      "Facturation Peppol et intégration bancaire",
+    ],
+    href: "/fr/produits/cleanops",
+    externalDocsUrl: "https://docs.cleanops.eu",
+    color: "teal" as const,
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>`,
+  },
+  {
+    name: "Nimble",
+    tagline: "Pour les entreprises orientées projets",
+    description:
+      "ERP pour la construction, l'installation et l'exécution de projets. Projets, états d'avancement, planning et facturation — tout ce dont une organisation projet a besoin.",
+    features: [
+      "Gestion de projet par phases",
+      "États d'avancement et factures partielles",
+      "Équipes et enregistrement du temps",
+      "Intégration Exact Online",
+    ],
+    href: "/fr/produits/nimble",
+    externalDocsUrl: "https://docs.nimble-erp.eu",
+    color: "purple" as const,
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+  },
+];
+
+const services = [
+  {
+    title: "Logiciels sur mesure",
+    description:
+      "Des applications spécifiques à votre entreprise qui suivent exactement votre processus de travail. Pas d'adaptation à un logiciel générique — mais des logiciels qui s'adaptent à vous.",
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>`,
+  },
+  {
+    title: "Plateformes web",
+    description:
+      "Des applications web modernes pour vos clients, partenaires ou collaborateurs. Sécurisées, évolutives et accessibles depuis n'importe quel navigateur.",
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>`,
+  },
+  {
+    title: "Applications mobiles",
+    description:
+      "Des applications iOS et Android qui s'intègrent parfaitement à vos systèmes centraux. Pour vos collaborateurs sur le terrain ou vos clients en déplacement.",
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>`,
+  },
+  {
+    title: "Intégrations",
+    description:
+      "Connexions avec eID, Peppol, logiciels comptables, plateformes bancaires et tous les systèmes utilisés par votre entreprise. Tout communique avec tout.",
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>`,
+  },
+];
+
+const principles = [
+  {
+    title: "Pas de progiciels standards",
+    description:
+      "Chaque organisation fonctionne différemment. Les logiciels standards vous imposent une forme qui n'est pas la vôtre. Nous construisons autour de votre processus, pas l'inverse.",
+  },
+  {
+    title: "Partenaire à long terme",
+    description:
+      "Un logiciel est un investissement, pas un projet. Des clients de la première heure utilisent encore nos plateformes — et nous évoluons avec eux.",
+  },
+  {
+    title: "Ancrage belge",
+    description:
+      "Équipe locale, expérience locale, législation locale. De Peppol aux déclarations TVA, de l'eID au SEPA Direct Debit — nous connaissons l'écosystème.",
+  },
+  {
+    title: "Ouvert et durable",
+    description:
+      "Vos données restent vos données. Formats standards, API ouvertes, pas de verrouillage artificiel. Vous nous choisissez pour la qualité, pas parce que vous ne pouvez pas partir.",
+  },
+];
+---
+
+<BaseLayout
+  title="ADM-Concept — Votre partenaire numérique sur mesure"
+  description="Logiciels sur mesure et plateformes numériques pour les entreprises belges. Plus de 25 ans d'expérience dans la traduction des processus métier en logiciels conviviaux."
+>
+  <!-- Hero (inline FR) -->
+  <section class="relative overflow-hidden bg-mesh-1">
+    <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-medium text-slate-700 mb-8 animate-fade-up">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Plus de 25 ans d'expérience en logiciels sur mesure
+          </div>
+
+          <h1 class="text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.05] animate-fade-up-delay-1">
+            Votre partenaire numérique,<br />
+            <span class="bg-gradient-to-r from-brand-600 via-brand-500 to-purple-600 bg-clip-text text-transparent">
+              sur mesure pour votre entreprise.
+            </span>
+          </h1>
+
+          <p class="mt-8 text-lg sm:text-xl text-slate-600 max-w-xl leading-relaxed animate-fade-up-delay-2">
+            Logiciels sur mesure et plateformes numériques qui traduisent
+            vos processus métier en efficacité. Pas de progiciels standards —
+            mais des solutions qui fonctionnent comme votre organisation.
+          </p>
+
+          <div class="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-3">
+            <a
+              href="/fr/contact"
+              class="inline-flex items-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all shadow-lg shadow-slate-900/10 hover:shadow-xl hover:shadow-slate-900/20 hover:-translate-y-0.5"
+            >
+              Planifier un entretien
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </a>
+            <a
+              href="/fr/produits"
+              class="inline-flex items-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl transition-all hover:-translate-y-0.5"
+            >
+              Découvrir nos produits
+            </a>
+          </div>
+        </div>
+
+        <div class="hidden lg:block animate-fade-up-delay-2">
+          <DashboardMockup variant="blue" />
+        </div>
+      </div>
+
+      <div class="mt-20 lg:mt-24 grid grid-cols-2 sm:grid-cols-4 gap-8 pt-8 border-t border-slate-200/60 animate-fade-up-delay-3">
+        <div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">25+</div>
+          <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Ans d'expérience</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">3</div>
+          <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Plateformes propres</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">20+</div>
+          <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Projets sur mesure</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">100%</div>
+          <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Made in Belgium</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products section -->
+  <section class="py-24 lg:py-32 bg-slate-50/50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-16">
+        <div class="inline-block px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-xs font-semibold text-brand-700 mb-4">
+          Nos plateformes
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Trois plateformes.<br />
+          Une promesse de qualité.
+        </h2>
+        <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+          En plus du sur mesure, nous avons développé trois plateformes spécialisées
+          pour des secteurs spécifiques. Des solutions éprouvées qui vous rendent
+          rapidement productifs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services section -->
+  <section class="py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-16">
+        <div class="inline-block px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-xs font-semibold text-emerald-700 mb-4">
+          Nos services
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Ce que nous construisons
+        </h2>
+        <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+          Des applications mobiles aux projets d'intégration avec les services publics :
+          nous construisons des logiciels qui font avancer votre entreprise.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {
+          services.map((service) => (
+            <div class="group p-8 bg-white border border-slate-200 rounded-2xl hover:border-slate-300 transition-all hover:shadow-lg">
+              <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center mb-5 group-hover:bg-brand-100 group-hover:text-brand-700 transition-colors">
+                <Fragment set:html={service.icon} />
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+              <p class="text-slate-600 leading-relaxed">{service.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles section -->
+  <section class="py-24 lg:py-32 bg-slate-50/50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-16">
+        <div class="inline-block px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-xs font-semibold text-purple-700 mb-4">
+          Nos engagements
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Nos principes
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {
+          principles.map((principle, index) => (
+            <div class="flex gap-6">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-lg">
+                0{index + 1}
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">{principle.title}</h3>
+                <p class="text-slate-600 leading-relaxed">{principle.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>
