@@ -279,6 +279,7 @@ export function getAlternateLanguagePath(currentPath: string, currentLang: Lang)
     "/diensten": { nl: "/diensten", fr: "/fr/services" },
     "/over-ons": { nl: "/over-ons", fr: "/fr/a-propos" },
     "/contact": { nl: "/contact", fr: "/fr/contact" },
+    "/contact/bedankt": { nl: "/contact/bedankt", fr: "/fr/contact/merci" },
     "/support": { nl: "/support", fr: "/fr/support" },
     "/privacy": { nl: "/privacy", fr: "/fr/confidentialite" },
     "/blog": { nl: "/blog", fr: "/fr/blog" },
