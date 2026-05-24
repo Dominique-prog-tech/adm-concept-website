@@ -6,20 +6,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title="Contact — ADM-Concept"
   description="Neem contact op met ADM-Concept. Geen verkooppraatjes — wel een eerlijk gesprek over uw uitdaging."
 >
-  <section class="py-16 lg:py-24 bg-mesh-1">
+  <section class="py-16 lg:py-24 bg-mesh-1 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <div class="inline-block px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700 mb-4">
-          Contact
+      <div class="grid lg:grid-cols-5 gap-12 items-center">
+        <div class="lg:col-span-3">
+          <div class="inline-block px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700 mb-4">
+            Contact
+          </div>
+          <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            Laten we praten.
+          </h1>
+          <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
+            Geen verkooppraatjes, geen formulieren-marathon. Stuur ons een mailtje
+            of bel ons direct. We luisteren naar uw uitdaging en bekijken of we
+            kunnen helpen.
+          </p>
         </div>
-        <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-          Laten we praten.
-        </h1>
-        <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-          Geen verkooppraatjes, geen formulieren-marathon. Stuur ons een mailtje
-          of bel ons direct. We luisteren naar uw uitdaging en bekijken of we
-          kunnen helpen.
-        </p>
+        <div class="lg:col-span-2 relative">
+          <div class="absolute -inset-4 bg-gradient-to-br from-brand-200 to-blue-200 rounded-3xl blur-2xl opacity-50"></div>
+          <img
+            src="/images/business-meeting.jpg"
+            alt="Een vrijblijvend gesprek over uw uitdaging"
+            class="relative w-full h-[320px] object-cover rounded-2xl shadow-2xl"
+            loading="eager"
+          />
+        </div>
       </div>
     </div>
   </section>
