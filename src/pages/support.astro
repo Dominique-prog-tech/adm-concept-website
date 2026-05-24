@@ -1,0 +1,303 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Support — ADM-Concept"
+  description="Vraag support aan voor CreditSoft, CleanOps, Nimble of een van onze maatwerktoepassingen. We helpen u snel verder."
+>
+  <section class="py-16 lg:py-24 bg-mesh-1">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-block px-3 py-1 rounded-full bg-amber-50 border border-amber-100 text-xs font-semibold text-amber-700 mb-4">
+          Support
+        </div>
+        <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Een vraag of probleem?
+        </h1>
+        <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+          Vul onderstaand formulier in en ons support-team neemt zo snel mogelijk
+          contact met u op. We behandelen elk ticket persoonlijk — geen
+          chatbots, geen scripted antwoorden.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Info zijbalk -->
+        <div class="lg:col-span-1 space-y-6">
+          <div>
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">
+              Direct contact
+            </h3>
+            <a href="mailto:support@adm-concept.be" class="text-lg font-medium text-slate-900 hover:text-brand-600 transition-colors">
+              support@adm-concept.be
+            </a>
+            <p class="mt-1 text-sm text-slate-500">
+              Reactie typisch binnen één werkdag.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">
+              Dringend?
+            </h3>
+            <a href="tel:+32475507937" class="text-lg font-medium text-slate-900 hover:text-brand-600 transition-colors">
+              +32 475 50 79 37
+            </a>
+            <p class="mt-1 text-sm text-slate-500">
+              Werkdagen 9–18u.
+            </p>
+          </div>
+
+          <div class="p-4 bg-amber-50 border border-amber-200 rounded-xl">
+            <p class="text-sm text-amber-900 leading-relaxed">
+              <strong>Tip:</strong> hoe meer detail u geeft (versie, schermafdruk,
+              foutmelding, stappen om te reproduceren), hoe sneller we kunnen
+              helpen.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">
+              Documentatie
+            </h3>
+            <ul class="space-y-1 text-sm">
+              <li>
+                <a href="https://docs.creditsoft.be" target="_blank" rel="noopener" class="text-slate-700 hover:text-brand-600 transition-colors">docs.creditsoft.be →</a>
+              </li>
+              <li>
+                <a href="https://docs.cleanops.eu" target="_blank" rel="noopener" class="text-slate-700 hover:text-brand-600 transition-colors">docs.cleanops.eu →</a>
+              </li>
+              <li>
+                <a href="https://docs.nimble-erp.eu" target="_blank" rel="noopener" class="text-slate-700 hover:text-brand-600 transition-colors">docs.nimble-erp.eu →</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="lg:col-span-2">
+          <!-- Succes-bericht -->
+          <div id="support-success" class="hidden bg-white p-8 lg:p-10 rounded-2xl border border-emerald-200 shadow-sm text-center">
+            <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-emerald-100 flex items-center justify-center">
+              <svg class="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-3">Ticket geregistreerd!</h2>
+            <p class="text-slate-600 leading-relaxed">
+              Uw support-vraag is goed aangekomen. We bekijken het zo snel
+              mogelijk en nemen contact met u op via het opgegeven e-mailadres.
+            </p>
+            <a href="/" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-lg transition-colors">
+              Terug naar de homepage
+            </a>
+          </div>
+
+          <form
+            id="support-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            class="bg-white p-8 lg:p-10 rounded-2xl border border-slate-200 shadow-sm"
+          >
+            <!-- Web3Forms configuratie -->
+            <input type="hidden" name="access_key" value="0f799889-ba48-4dbd-a540-15a7f5b7b5b1" />
+            <input type="hidden" name="subject" value="Nieuw support-ticket via adm-concept.be" />
+            <input type="hidden" name="from_name" value="ADM-Concept Support" />
+
+            <!-- Honeypot -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <h2 class="text-2xl font-bold text-slate-900 mb-2">Support-ticket aanmaken</h2>
+            <p class="text-sm text-slate-500 mb-8">
+              Velden met <span class="text-red-500">*</span> zijn verplicht.
+            </p>
+
+            <div class="space-y-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="naam" class="block text-sm font-medium text-slate-700 mb-2">
+                    Naam <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" id="naam" name="naam" required
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors" />
+                </div>
+                <div>
+                  <label for="bedrijf" class="block text-sm font-medium text-slate-700 mb-2">
+                    Bedrijf <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" id="bedrijf" name="bedrijf" required
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-slate-700 mb-2">
+                    E-mail <span class="text-red-500">*</span>
+                  </label>
+                  <input type="email" id="email" name="email" required
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors" />
+                </div>
+                <div>
+                  <label for="telefoon" class="block text-sm font-medium text-slate-700 mb-2">
+                    Telefoon
+                  </label>
+                  <input type="tel" id="telefoon" name="telefoon"
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="platform" class="block text-sm font-medium text-slate-700 mb-2">
+                    Platform <span class="text-red-500">*</span>
+                  </label>
+                  <select id="platform" name="platform" required
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
+                    <option value="">Selecteer platform</option>
+                    <option value="CreditSoft">CreditSoft</option>
+                    <option value="CleanOps">CleanOps</option>
+                    <option value="Nimble">Nimble</option>
+                    <option value="Maatwerk">Maatwerktoepassing</option>
+                    <option value="Andere">Andere / niet zeker</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="prioriteit" class="block text-sm font-medium text-slate-700 mb-2">
+                    Prioriteit
+                  </label>
+                  <select id="prioriteit" name="prioriteit"
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
+                    <option value="Normaal">Normaal — vraag of klein probleem</option>
+                    <option value="Hoog">Hoog — werk wordt belemmerd</option>
+                    <option value="Dringend">Dringend — productie ligt stil</option>
+                    <option value="Laag">Laag — wens of suggestie</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="onderwerp" class="block text-sm font-medium text-slate-700 mb-2">
+                  Onderwerp <span class="text-red-500">*</span>
+                </label>
+                <input type="text" id="onderwerp" name="onderwerp" required
+                  placeholder="Bv. Fout bij export PDF op dossier-overzicht"
+                  class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors" />
+              </div>
+
+              <div>
+                <label for="beschrijving" class="block text-sm font-medium text-slate-700 mb-2">
+                  Beschrijving <span class="text-red-500">*</span>
+                </label>
+                <textarea id="beschrijving" name="beschrijving" rows="7" required
+                  placeholder="Beschrijf het probleem zo concreet mogelijk: wat probeerde u te doen, wat gebeurde er, welke foutmelding kreeg u, op welk scherm..."
+                  class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"></textarea>
+              </div>
+
+              <!-- Foutmelding -->
+              <div id="support-error" class="hidden p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
+                Er ging iets mis bij het verzenden. Probeer het opnieuw of mail rechtstreeks naar
+                <a href="mailto:support@adm-concept.be" class="font-semibold underline">support@adm-concept.be</a>.
+              </div>
+
+              <div class="pt-2">
+                <button id="support-submit-btn" type="submit"
+                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed">
+                  <span id="support-submit-text">Ticket aanmaken</span>
+                  <svg id="support-submit-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+                  <svg id="support-submit-spinner" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                </button>
+                <p class="mt-3 text-xs text-slate-500">
+                  Uw gegevens worden uitsluitend gebruikt om uw vraag te
+                  behandelen. We bewaren tickets conform ons
+                  <a href="/privacy" class="underline hover:text-slate-700">privacybeleid</a>.
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("support-form") as HTMLFormElement | null;
+    const successDiv = document.getElementById("support-success");
+    const errorDiv = document.getElementById("support-error");
+    const submitBtn = document.getElementById("support-submit-btn") as HTMLButtonElement | null;
+    const submitText = document.getElementById("support-submit-text");
+    const submitIcon = document.getElementById("support-submit-icon");
+    const submitSpinner = document.getElementById("support-submit-spinner");
+
+    // Auto-fill velden vanuit URL-parameters
+    // Voorbeeld: /support?platform=CreditSoft&klant=ABC%20BVBA&naam=Jan&email=jan@abc.be
+    const params = new URLSearchParams(window.location.search);
+    const fieldMapping: Record<string, string> = {
+      platform: "platform",
+      klant: "bedrijf",
+      bedrijf: "bedrijf",
+      naam: "naam",
+      email: "email",
+      telefoon: "telefoon",
+      onderwerp: "onderwerp",
+      prioriteit: "prioriteit",
+    };
+
+    for (const [paramKey, fieldId] of Object.entries(fieldMapping)) {
+      const value = params.get(paramKey);
+      if (value) {
+        const field = document.getElementById(fieldId) as HTMLInputElement | HTMLSelectElement | null;
+        if (field) {
+          field.value = value;
+        }
+      }
+    }
+
+    form?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      errorDiv?.classList.add("hidden");
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitText) submitText.textContent = "Verzenden...";
+      submitIcon?.classList.add("hidden");
+      submitSpinner?.classList.remove("hidden");
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          form.classList.add("hidden");
+          successDiv?.classList.remove("hidden");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          throw new Error(result.message || "Onbekende fout");
+        }
+      } catch (error) {
+        console.error("Support form submission error:", error);
+        errorDiv?.classList.remove("hidden");
+
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitText) submitText.textContent = "Ticket aanmaken";
+        submitIcon?.classList.remove("hidden");
+        submitSpinner?.classList.add("hidden");
+      }
+    });
+  </script>
+</BaseLayout>
