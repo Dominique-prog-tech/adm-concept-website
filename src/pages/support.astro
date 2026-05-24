@@ -159,12 +159,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   </label>
                   <select id="platform" name="platform" required
                     class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
-                    <option value="">Selecteer platform</option>
+                    <option value="">Selecteer</option>
                     <option value="CreditSoft">CreditSoft</option>
                     <option value="CleanOps">CleanOps</option>
                     <option value="Nimble">Nimble</option>
-                    <option value="Maatwerk">Maatwerktoepassing</option>
-                    <option value="Andere">Andere / niet zeker</option>
+                    <option value="Maatwerk">Maatwerk</option>
+                    <option value="Andere">Andere</option>
                   </select>
                 </div>
                 <div>
@@ -173,11 +173,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   </label>
                   <select id="prioriteit" name="prioriteit"
                     class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
-                    <option value="Normaal">Normaal — vraag of klein probleem</option>
-                    <option value="Hoog">Hoog — werk wordt belemmerd</option>
-                    <option value="Dringend">Dringend — productie ligt stil</option>
-                    <option value="Laag">Laag — wens of suggestie</option>
+                    <option value="Normaal">Normaal</option>
+                    <option value="Hoog">Hoog</option>
+                    <option value="Dringend">Dringend</option>
+                    <option value="Laag">Laag</option>
                   </select>
+                  <p class="mt-2 text-xs text-slate-500 leading-relaxed">
+                    <strong>Dringend</strong>: productie stil ·
+                    <strong>Hoog</strong>: werk belemmerd ·
+                    <strong>Normaal</strong>: vraag ·
+                    <strong>Laag</strong>: wens
+                  </p>
                 </div>
               </div>
 
