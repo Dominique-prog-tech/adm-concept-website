@@ -1,0 +1,20 @@
+# Cloudflare Pages redirects
+# Format: <oud-pad> <nieuw-pad> <status>
+# Wildcards (*) en placeholders (:slug) worden ondersteund.
+
+# === Oude Odoo helpdesk -> nieuwe support-pagina ===
+/helpdesk/adm-concept-support-1        /support  301
+/helpdesk/adm-concept-support-1/*      /support  301
+/helpdesk                              /support  301
+/helpdesk/*                            /support  301
+
+# === Oude Odoo contact/shop paden -> nieuwe equivalenten ===
+/shop                                  /producten           301
+/shop/*                                /producten           301
+
+# === Eventuele Odoo /web paden ===
+/web/login                             /                    301
+/web                                   /                    301
+
+# === Apex sub-paden die mensen via oude bookmarks kunnen bezoeken ===
+# (toevoegen wanneer we ze ontdekken)
