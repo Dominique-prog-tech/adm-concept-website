@@ -1,0 +1,342 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CTA from "../../components/CTA.astro";
+
+const phases = [
+  {
+    step: "01",
+    title: "Découverte",
+    duration: "1 à 2 semaines",
+    description:
+      "Nous écoutons d'abord. Pas de questionnaires, juste un échange sans engagement sur ce que vous voulez atteindre, ce qui ne fonctionne pas aujourd'hui et où se situe la difficulté.",
+    weDo: [
+      "Entretien exploratoire (1-2 h, en ligne ou chez vous)",
+      "Première estimation du périmètre et de la complexité",
+      "Conseil honnête — y compris si vous n'avez pas besoin d'un nouveau logiciel",
+    ],
+    weAsk: [
+      "Le temps d'expliquer franchement votre situation",
+      "Si disponibles : des exemples de votre façon de travailler actuelle",
+    ],
+  },
+  {
+    step: "02",
+    title: "Analyse & proposition",
+    duration: "1 à 3 semaines",
+    description:
+      "Sur base de la découverte, nous approfondissons : quels processus, quels utilisateurs, quelles intégrations ? Nous fournissons une proposition claire avec périmètre, planning et indication de prix.",
+    weDo: [
+      "Atelier(s) avec vous et vos collaborateurs-clés",
+      "Esquisse de l'architecture et du modèle de données",
+      "Proposition concrète : périmètre, planning, modèle de prix",
+      "Analyse des risques et alternatives",
+    ],
+    weAsk: [
+      "L'accès aux personnes qui utilisent le processus au quotidien",
+      "Un décideur autour de la table",
+    ],
+  },
+  {
+    step: "03",
+    title: "Construction itérative",
+    duration: "2 à 6 mois",
+    description:
+      "Des sprints courts avec démonstrations intermédiaires. Vous donnez du feedback, nous ajustons. Pas de lancement « big bang » — tout devient visible et utilisable étape par étape.",
+    weDo: [
+      "Sprints de 2-3 semaines avec livrables concrets",
+      "Démonstrations hebdomadaires ou bimensuelles",
+      "Reporting transparent et backlog accessible",
+      "Code et infrastructure entièrement chez vous — pas de verrouillage fournisseur",
+    ],
+    weAsk: [
+      "1 à 2 heures par semaine pour le feedback et la validation",
+      "Un interlocuteur central de votre côté",
+    ],
+  },
+  {
+    step: "04",
+    title: "Recette & mise en production",
+    duration: "2 à 4 semaines",
+    description:
+      "Avant la mise en production, nous testons ensemble, formons votre équipe et planifions un déploiement stable. Pas de mauvaises surprises le jour du go-live.",
+    weDo: [
+      "Tests de recette utilisateur avec des scénarios issus de votre pratique",
+      "Sessions de formation pour les utilisateurs finaux",
+      "Documentation et manuel",
+      "Migration des données existantes (le cas échéant)",
+      "Mise en production avec support direct",
+    ],
+    weAsk: [
+      "La disponibilité des utilisateurs finaux pour la formation",
+      "Du temps pour une phase de test en parallèle",
+    ],
+  },
+  {
+    step: "05",
+    title: "Accompagnement & évolution",
+    duration: "Continu",
+    description:
+      "Un projet logiciel ne se termine pas à la mise en production. Nous offrons du support, résolvons les imprévus et vous aidons à faire évoluer la solution selon les besoins changeants de votre entreprise.",
+    weDo: [
+      "Support réactif avec SLA sur mesure",
+      "Maintenance et mises à jour périodiques",
+      "Évolution selon vos besoins changeants",
+      "Mises à jour des technologies sous-jacentes et de la sécurité",
+    ],
+    weAsk: [
+      "Une communication ouverte sur ce qui fonctionne et ce qui ne fonctionne pas en pratique",
+    ],
+  },
+];
+
+const principles = [
+  {
+    title: "Pas de surprise sur la facture",
+    description:
+      "Périmètre clair à l'avance et procédure transparente pour les avenants. Vous ne recevrez jamais une facture que vous n'avez pas vue venir.",
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+  },
+  {
+    title: "Vous êtes propriétaire",
+    description:
+      "Le code source, les données et l'infrastructure vous appartiennent. Pas de verrouillage : vous pouvez partir à tout moment, ou confier la suite à un autre prestataire.",
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>`,
+  },
+  {
+    title: "Depuis 1997",
+    description:
+      "28 ans d'expérience avec les entreprises belges et leurs défis spécifiques : Peppol, eID, réglementation, intégrations avec les logiciels comptables locaux.",
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+  },
+  {
+    title: "Pas d'intermédiaires",
+    description:
+      "Vous parlez directement aux personnes qui construisent votre solution — pas de chef de projet en messager, pas de jeu du téléphone.",
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>`,
+  },
+  {
+    title: "Itératif, pas big bang",
+    description:
+      "Des cycles courts signifient du feedback tôt et moins de risques. Vous voyez votre solution grandir au lieu d'attendre un go-live mystérieux.",
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>`,
+  },
+  {
+    title: "Conseil honnête",
+    description:
+      "Parfois, ne pas développer de nouveau logiciel est la meilleure solution — une adaptation de votre outil existant ou un changement de processus suffit. Nous le disons.",
+    icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>`,
+  },
+];
+
+const faq = [
+  {
+    question: "Travaillez-vous à prix fixe ou en régie ?",
+    answer:
+      "Les deux, selon la nature du projet. Pour des périmètres clairement définis, nous travaillons à prix fixe. Pour les défis ouverts avec un périmètre incertain, nous utilisons une régie plafonnée. Nous discutons au préalable du modèle qui convient à votre situation.",
+  },
+  {
+    question: "Combien de temps dure un projet sur mesure moyen ?",
+    answer:
+      "Une application sur mesure typique prend 3 à 6 mois pour une première version en production, suivie d'une évolution continue. Les extensions plus petites sur un logiciel existant prennent souvent quelques semaines. Nous fournissons toujours une estimation réaliste après la phase d'analyse.",
+  },
+  {
+    question: "Que se passe-t-il si le périmètre évolue pendant le projet ?",
+    answer:
+      "Notre approche itérative gère cela naturellement. Des cycles courts signifient que nous réévaluons et ajustons toutes les 2-3 semaines. Les modifications importantes de périmètre sont discutées avec vous — avec un impact clair sur planning et budget, pas de surprises.",
+  },
+  {
+    question: "Qui possède le code et les données ?",
+    answer:
+      "Vous. Entièrement. À la livraison, vous recevez le code source, toutes les données et les instructions de déploiement. Nous livrons des systèmes critiques — la propriété est essentielle. Pas de structure de licence, pas de verrouillage.",
+  },
+  {
+    question: "Et l'hébergement et la maintenance après la mise en production ?",
+    answer:
+      "Les deux options sont possibles. Nous pouvons héberger nous-mêmes (managé) ou livrer votre solution pour qu'elle tourne chez vous ou chez un hébergeur de votre choix. Le choix dépend de votre préférence, de votre échelle et de vos exigences de conformité.",
+  },
+  {
+    question: "Quelles technologies utilisez-vous ?",
+    answer:
+      "Nous choisissons en fonction de votre situation et de votre environnement IT existant. Pas de religion autour d'un seul framework — mais une forte préférence pour des stacks éprouvés et stables à long terme : .NET, Delphi, frameworks web modernes (Astro, React), Node.js, et natif mobile (iOS/Android) lorsque nécessaire.",
+  },
+];
+
+// JSON-LD: FAQPage — pour que Google affiche les questions en rich snippet
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title="Notre approche : 5 phases pour projets sur mesure — ADM-Concept"
+  description="Comment un projet logiciel sur mesure se déroule chez ADM-Concept : du premier échange à la production et l'évolution continue. Cinq phases claires, pas de surprises."
+>
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-mesh-1 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-5 gap-12 items-center">
+        <div class="lg:col-span-3">
+          <div class="inline-block px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-xs font-semibold text-indigo-700 mb-4">
+            Notre approche
+          </div>
+          <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            Pas de boîte noire.<br />
+            Pas de surprises.
+          </h1>
+          <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
+            Comment un projet logiciel se déroule chez ADM-Concept — du premier
+            entretien exploratoire à la production et des années d'évolution.
+            En cinq phases, avec des accords clairs à chaque étape.
+          </p>
+        </div>
+        <div class="lg:col-span-2 relative">
+          <div class="absolute -inset-4 bg-gradient-to-br from-indigo-200 to-brand-200 rounded-3xl blur-2xl opacity-50"></div>
+          <img
+            src="/images/team-collaboration.jpg"
+            alt="Collaboration sur un projet sur mesure"
+            class="relative w-full h-[320px] object-cover rounded-2xl shadow-2xl"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 phases -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-16">
+        <div class="inline-block px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-xs font-semibold text-indigo-700 mb-4">
+          Les cinq phases
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Du premier échange à l'évolution continue
+        </h2>
+        <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+          À chaque phase, vous savez ce que nous faisons, ce que nous attendons
+          de vous et à peu près combien de temps cela prend. Pas de surprises.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {phases.map((phase) => (
+          <article class="relative p-8 lg:p-10 bg-white border border-slate-200 rounded-2xl hover:border-indigo-200 hover:shadow-xl transition-all">
+            <div class="grid lg:grid-cols-12 gap-8">
+              <div class="lg:col-span-4">
+                <div class="text-6xl font-extrabold text-indigo-100 mb-2">{phase.step}</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">{phase.title}</h3>
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-xs font-semibold text-slate-600">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  {phase.duration}
+                </div>
+                <p class="mt-4 text-slate-600 leading-relaxed">{phase.description}</p>
+              </div>
+
+              <div class="lg:col-span-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Ce que nous faisons</h4>
+                <ul class="space-y-2">
+                  {phase.weDo.map((item) => (
+                    <li class="flex items-start gap-2 text-sm text-slate-700">
+                      <svg class="w-4 h-4 text-indigo-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="lg:col-span-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Ce que nous vous demandons</h4>
+                <ul class="space-y-2">
+                  {phase.weAsk.map((item) => (
+                    <li class="flex items-start gap-2 text-sm text-slate-700">
+                      <svg class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="py-16 lg:py-24 bg-slate-50/60">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <div class="inline-block px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-xs font-semibold text-indigo-700 mb-4">
+          Ce qui nous distingue
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Six principes qui guident chaque décision
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {principles.map((p) => (
+          <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center mb-4">
+              <Fragment set:html={p.icon} />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">{p.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{p.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <div class="inline-block px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-xs font-semibold text-indigo-700 mb-4">
+          Questions fréquentes
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Les questions pratiques que chaque prospect pose
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faq.map((item) => (
+          <details class="group bg-white border border-slate-200 rounded-xl">
+            <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none">
+              <h3 class="text-base font-semibold text-slate-900">{item.question}</h3>
+              <svg class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              {item.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Prêt pour un premier échange exploratoire ?"
+    description="Nous examinons ensemble votre situation et vous donnons un conseil honnête. Sans engagement, et si nous ne sommes pas la bonne partie — nous vous le dirons aussi."
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</BaseLayout>
