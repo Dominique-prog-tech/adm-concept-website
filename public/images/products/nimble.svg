@@ -1,0 +1,11 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nimble logo">
+  <defs>
+    <linearGradient id="nb-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#nb-bg)"/>
+  <!-- Lightning bolt -->
+  <path d="M37 10 L 19 35 L 31 35 L 27 54 L 45 29 L 33 29 L 37 10 Z" fill="white"/>
+</svg>
