@@ -16,7 +16,7 @@ order: 1
 lang: "fr"
 ---
 
-Cares Assistance lance avec **Family Care** un nouveau produit d'assurance qui nécessite un support digital au niveau d'un grand groupe — mais avec l'agilité d'un assureur spécialisé. ADM-Concept a étendu le logiciel sur mesure existant avec cinq nouvelles fonctions pour soutenir le lancement sans accrocs.
+[Cares Assistance](https://www.cares-assistance.eu) lance avec **Family Care** un nouveau produit d'assurance qui nécessite un support digital au niveau d'un grand groupe — mais avec l'agilité d'un assureur spécialisé. ADM-Concept a étendu le logiciel sur mesure existant avec cinq nouvelles fonctions pour soutenir le lancement sans accrocs.
 
 ## Le défi
 

@@ -8,7 +8,7 @@ image: "/images/business-meeting.jpg"
 lang: "fr"
 ---
 
-Cares Assistance présente fièrement un nouveau produit : **Family Care**. Ce produit innovant s'appuie sur le logiciel sur mesure développé par ADM-Concept, qui gère également les produits actuels de Cares Assistance.
+[Cares Assistance](https://www.cares-assistance.eu) présente fièrement un nouveau produit : **Family Care**. Ce produit innovant s'appuie sur le logiciel sur mesure développé par ADM-Concept, qui gère également les produits actuels de Cares Assistance.
 
 ## Extension du logiciel sur mesure
 

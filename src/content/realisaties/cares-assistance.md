@@ -16,7 +16,7 @@ order: 1
 lang: "nl"
 ---
 
-Cares Assistance lanceert met **Family Care** een nieuw verzekeringsproduct dat een digitale ondersteuning vereist op niveau van een groot bedrijf — maar met de wendbaarheid van een gespecialiseerde verzekeraar. ADM-Concept heeft de bestaande maatwerksoftware uitgebreid met vijf nieuwe functies om de productlancering naadloos te ondersteunen.
+[Cares Assistance](https://www.cares-assistance.eu) lanceert met **Family Care** een nieuw verzekeringsproduct dat een digitale ondersteuning vereist op niveau van een groot bedrijf — maar met de wendbaarheid van een gespecialiseerde verzekeraar. ADM-Concept heeft de bestaande maatwerksoftware uitgebreid met vijf nieuwe functies om de productlancering naadloos te ondersteunen.
 
 ## De uitdaging
 

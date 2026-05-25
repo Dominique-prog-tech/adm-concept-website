@@ -7,7 +7,7 @@ tags: ["Klantcase", "Cares Assistance", "Maatwerk", "Verzekeringen"]
 image: "/images/business-meeting.jpg"
 ---
 
-Cares Assistance introduceert met trots een nieuw product: **Family Care**. Dit innovatieve product wordt ondersteund door de op maat gemaakte software van ADM-Concept, die ook de huidige producten van Cares Assistance beheert.
+[Cares Assistance](https://www.cares-assistance.eu) introduceert met trots een nieuw product: **Family Care**. Dit innovatieve product wordt ondersteund door de op maat gemaakte software van ADM-Concept, die ook de huidige producten van Cares Assistance beheert.
 
 ## Uitbreiding van de maatwerksoftware
 

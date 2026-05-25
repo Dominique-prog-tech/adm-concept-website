@@ -7,7 +7,7 @@ tags: ["Klantcase", "Tentmoment", "Veldeman", "Maatwerk", "Verhuur"]
 image: "/images/team-collaboration.jpg"
 ---
 
-Veldeman neemt Tentmoment over en versnelt daarmee de professionalisering van de verhuurprocessen. ADM-Concept breidt de bestaande maatwerksoftware uit met **API-koppelingen, geavanceerde planning, periodieke facturatie en uitgebreide rapportering** — voor meer schaalbaarheid, snelheid en transparantie.
+Veldeman neemt [Tentmoment](https://www.tentmoment.be) over en versnelt daarmee de professionalisering van de verhuurprocessen. ADM-Concept breidt de bestaande maatwerksoftware uit met **API-koppelingen, geavanceerde planning, periodieke facturatie en uitgebreide rapportering** — voor meer schaalbaarheid, snelheid en transparantie.
 
 ## Maatwerksoftware voor verhuurbeheer
 

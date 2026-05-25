@@ -8,7 +8,7 @@ image: "/images/team-collaboration.jpg"
 lang: "fr"
 ---
 
-Veldeman reprend Tentmoment et accélère ainsi la professionnalisation des processus de location. ADM-Concept étend le logiciel sur mesure existant avec des **connexions API, du planning avancé, de la facturation périodique et un reporting étendu** — pour davantage de scalabilité, de rapidité et de transparence.
+Veldeman reprend [Tentmoment](https://www.tentmoment.be) et accélère ainsi la professionnalisation des processus de location. ADM-Concept étend le logiciel sur mesure existant avec des **connexions API, du planning avancé, de la facturation périodique et un reporting étendu** — pour davantage de scalabilité, de rapidité et de transparence.
 
 ## Un logiciel sur mesure pour la gestion locative
 

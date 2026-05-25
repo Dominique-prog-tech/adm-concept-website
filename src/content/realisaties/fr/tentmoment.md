@@ -16,7 +16,7 @@ order: 2
 lang: "fr"
 ---
 
-Lorsque le **groupe Veldeman** a racheté Tentmoment, le logiciel sur mesure existant s'est soudainement retrouvé dans un contexte international. ADM-Concept a développé trois extensions principales pour bien gérer la montée en échelle sans devoir remplacer le système opérationnel existant.
+Lorsque le **groupe Veldeman** a racheté [Tentmoment](https://www.tentmoment.be), le logiciel sur mesure existant s'est soudainement retrouvé dans un contexte international. ADM-Concept a développé trois extensions principales pour bien gérer la montée en échelle sans devoir remplacer le système opérationnel existant.
 
 ## Le défi
 
