@@ -1,53 +1,56 @@
 ---
-title: "Cares Assistance — Family Care platform"
+title: "Cares Assistance — Zes jaar bouwen aan één verzekeringsplatform"
 customer: "Cares Assistance"
 sector: "Verzekeringen"
 platform: "Maatwerk"
-year: "2026"
-summary: "Uitbreiding van het bestaande verzekeringsplatform met een online voorstelmodule, automatische commissieberekening, geïntegreerd documentenbeheer en een uitgebreid tussenpersonenportaal — om de lancering van het nieuwe Family Care product te ondersteunen."
+year: "Sinds 2020"
+summary: "Sinds 2020 bouwen en evolueren we voor Cares Assistance een compleet verzekeringsplatform dat polisbeheer, financiële opvolging, commissies en een tussenpersonenportaal samenbrengt. Elke maand groeit het mee met hun activiteiten — recentste mijlpaal: de Family Care productlancering."
 heroImage: "/images/business-meeting.jpg"
 technologies:
   - REST API
   - Maatwerksoftware
   - Tussenpersonenportaal
-  - Documentenbeheer
+  - Commissieberekening
+  - Fiches 281.50
+capabilities:
+  - icon: document
+    title: Polisbeheer
+    description: "Volledige verwerking van het polisbeheer voor meerdere productlijnen, elk met eigen regels voor berekening en indexatie."
+  - icon: currency
+    title: Financiële opvolging
+    description: "Periodieke premie-inning, automatische achterstandsbrieven en de verwerking van chutes bij langdurige achterstand — sluitend van begin tot einde."
+  - icon: users
+    title: Commissies & borderellen
+    description: "Automatische commissieberekening per tussenpersoon, maandelijkse borderellen en de generatie van fiscale fiches 281.50."
+  - icon: computer
+    title: Tussenpersonenportaal
+    description: "Self-service portaal waar tussenpersonen hun productie raadplegen, borderellen downloaden en achterstandslijsten consulteren."
+  - icon: link
+    title: Partner API
+    description: "REST API waarmee partners van Cares Assistance productiegegevens rechtstreeks in hun eigen systemen kunnen inlezen."
 featured: true
 order: 1
 lang: "nl"
 ---
 
-[Cares Assistance](https://www.cares-assistance.eu) lanceert met **Family Care** een nieuw verzekeringsproduct dat een digitale ondersteuning vereist op niveau van een groot bedrijf — maar met de wendbaarheid van een gespecialiseerde verzekeraar. ADM-Concept heeft de bestaande maatwerksoftware uitgebreid met vijf nieuwe functies om de productlancering naadloos te ondersteunen.
+[Cares Assistance](https://www.cares-assistance.eu) is sinds 2020 één van onze langlopende klanten in de verzekeringssector. Wat begon als een gerichte softwareontwikkeling, groeide doorheen de jaren uit tot het platform dat vandaag het volledige operationele hart van hun bedrijf vormt — van polisbeheer over commissies tot het portaal voor hun tussenpersonen.
 
-## De uitdaging
+## Een platform dat met de klant meegroeit
 
-Cares Assistance wilde Family Care online aanbieden met directe registratie van voorstellen vanaf hun website, automatische administratieve verwerking en transparante commissieafhandeling voor tussenpersonen. Het bestaande backofficesysteem moest worden uitgebreid zonder dat de huidige producten verstoord werden — en zonder dubbele invoer of handmatige correcties.
+In zes jaar samenwerking is dit verzekeringsplatform stap voor stap uitgebouwd. We hebben nooit een "big bang"-rebuild gedaan — wel een **continue evolutie** waarbij elke nieuwe productlancering, elke nieuwe regelgeving en elke nieuwe vraag van het Cares-team werd vertaald naar een passende uitbreiding van de bestaande software.
 
-## Onze aanpak
+Het platform ondersteunt vandaag meerdere productlijnen, elk met hun **eigen rekenregels, indexatieformules en commissiestructuren**. Wanneer Cares Assistance een nieuw verzekeringsproduct op de markt brengt, breiden we het platform uit zonder de bestaande producten te raken — gebruiksgemak en stabiliteit blijven gegarandeerd.
 
-ADM-Concept breidde de bestaande maatwerksoftware uit met vijf gerichte modules:
+## Recente mijlpaal: Family Care
 
-### REST API-koppeling
-Voorstellen ingediend op de Cares Assistance website komen automatisch in de backofficetoepassing — geen dubbele invoer, geen verloren leads.
+De lancering van **Family Care** was een mooi voorbeeld van die continue evolutie. Voor dit nieuwe product hebben we een volledige API-koppeling gebouwd met het **sales platform van de tussenpersonen** — voorstellen die ze online intoetsen, komen automatisch in de backoffice van Cares Assistance terecht, met alle bijbehorende administratieve verwerking, commissiekoppelingen en documentenstroom.
 
-### Geïntegreerd documentenbeheer
-Polissen, attesten en correspondentie worden automatisch gekoppeld aan het juiste klant- en dossier. De administratie blijft georganiseerd zonder manuele kleefwerk.
+## Wat er volgt
 
-### Automatische commissieberekening
-Tussenpersonencommissies worden automatisch berekend en verwerkt — **inclusief terugbetalingsopvolging bij polisstopzetting**. Geen handmatige correcties meer.
+De roadmap blijft vol: er staan **nieuwe producten** op de planning die het platform verder gaan uitbreiden, en parallel werken we dagelijks aan kleine verbeteringen — gericht op het verhogen van de productiviteit van zowel het team van Cares Assistance als van hun tussenpersonen.
 
-### Betalingsverkeerregistratie
-Premies, terugbetalingen en provisies worden per polis gevolgd. Boekhoudkundige aansluiting is sluitend en realtime.
+Een typische week: een nieuwe rapportering toevoegen, een veld optimaliseren in een dossier-scherm, een achterstandsbrief-template bijwerken, een API-call uitbreiden voor een specifieke partner. **Klein op zich, groot in cumulatief effect** over de jaren heen.
 
-### Uitgebreid tussenpersonenportaal
-Tussenpersonen krijgen via het portaal meer inzicht in hun productie, lopende dossiers en commissies — wat leidt tot betere zelfbediening en minder vragen aan de backoffice.
+## Wat dit voorbeeld toont
 
-## Het resultaat
-
-- **Vlotte productlancering** zonder verstoring van de bestaande activiteiten
-- **Geen dubbele invoer** tussen website en backoffice
-- **Volledig sluitende boekhouding** op polis-niveau
-- **Hogere tevredenheid bij tussenpersonen** dankzij verbeterd zelfservice-portaal
-
-## Wat we eruit meenamen
-
-Sectorspecifieke maatwerksoftware schaalt het best wanneer ze modulair wordt uitgebreid in plaats van vervangen. Door de uitbreidingen netjes te integreren met de bestaande structuur, kon Cares Assistance haar nieuwe product lanceren zonder een grootschalige migratie.
+Lange-termijn maatwerksoftware werkt het best wanneer het **mee evolueert** met de business. Cares Assistance is geen klant die "een project liet bouwen en het daarbij liet" — het is een partnership waarbij hun groei en de software hand in hand gaan. En dat is precies wat maatwerk kan dat standaardpakketten niet kunnen.

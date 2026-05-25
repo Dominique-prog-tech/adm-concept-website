@@ -26,6 +26,15 @@ const realisaties = defineCollection({
     summary: z.string(),
     heroImage: z.string().optional(),
     technologies: z.array(z.string()).default([]),
+    capabilities: z
+      .array(
+        z.object({
+          icon: z.string(),
+          title: z.string(),
+          description: z.string(),
+        }),
+      )
+      .optional(),
     featured: z.boolean().default(false),
     order: z.number().default(99),
     lang: z.enum(["nl", "fr"]).default("nl"),
