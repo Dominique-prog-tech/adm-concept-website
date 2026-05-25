@@ -14,6 +14,7 @@ technologies:
 featured: false
 order: 2
 lang: "nl"
+draft: true
 ---
 
 Toen de **Veldeman-groep** [Tentmoment](https://www.tentmoment.be) overnam, stond de bestaande maatwerksoftware plots in een internationale context. ADM-Concept ontwikkelde drie hoofduitbreidingen om de schaalvergroting in goede banen te leiden zonder dat het bestaande operationele systeem moest worden vervangen.

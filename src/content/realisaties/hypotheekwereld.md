@@ -14,6 +14,7 @@ technologies:
 featured: true
 order: 3
 lang: "nl"
+draft: true
 ---
 
 Hypotheekwereld werkt dagelijks met kredietdossiers die zowel in **BLUE** (het banken-platform voor hypotheekaanvragen) als in hun eigen administratieve systeem terechtkomen. Voorheen betekende dat dubbele invoer voor elk dossier. ADM-Concept heeft daarom een integratie ontwikkeld tussen **CreditSoft** en BLUE die de twee werelden in één werkflow brengt.

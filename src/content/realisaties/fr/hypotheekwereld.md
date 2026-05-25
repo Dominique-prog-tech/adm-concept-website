@@ -14,6 +14,7 @@ technologies:
 featured: true
 order: 3
 lang: "fr"
+draft: true
 ---
 
 Hypotheekwereld travaille quotidiennement avec des dossiers de crédit qui arrivent à la fois dans **BLUE** (la plateforme bancaire pour les demandes hypothécaires) et dans leur propre système administratif. Auparavant, cela signifiait un double encodage pour chaque dossier. ADM-Concept a donc développé une intégration entre **CreditSoft** et BLUE qui réunit les deux mondes dans un seul flux de travail.
