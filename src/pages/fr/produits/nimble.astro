@@ -11,6 +11,15 @@ const modules = [
   { title: "Finances", description: "Tableau de bord des ventes, factures, rappels, factures d'achat." },
   { title: "Intégrations", description: "Exact Online, Peppol, enregistrement du temps, gestion du matériel." },
 ];
+
+const doelgroepen = [
+  "Entreprises de construction et entrepreneurs",
+  "Installateurs (électricité, sanitaire, HVAC)",
+  "Menuiseries et constructions métalliques",
+  "Entrepreneurs de projets",
+  "Bureaux d'études et consultants",
+  "PME générales avec gestion par projets",
+];
 ---
 
 <BaseLayout
@@ -44,15 +53,18 @@ const modules = [
             réellement besoin : états d'avancement, gestion du matériel,
             planification des équipes, enregistrement du temps.
           </p>
-          <div class="mt-4 p-3 bg-purple-50 border border-purple-200 rounded-lg text-sm text-purple-900">
-            <strong>Site produit en construction</strong> — visitez entre-temps notre documentation ou contactez-nous pour une démo.
-          </div>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="/fr/contact" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-white bg-purple-600 hover:bg-purple-700 rounded-xl transition-all shadow-lg">
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://www.nimble-erp.eu" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-white bg-purple-600 hover:bg-purple-700 rounded-xl transition-all shadow-lg">
+              Visiter nimble-erp.eu
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <a href="/fr/contact" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl transition-all">
               Demander une démo
             </a>
-            <a href="https://docs.nimble-erp.eu" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl transition-all">
-              Consulter la documentation
+            <a href="https://docs.nimble-erp.eu" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-slate-700 hover:text-slate-900 rounded-xl transition-all">
+              Documentation
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
               </svg>
@@ -66,11 +78,41 @@ const modules = [
     </div>
   </section>
 
+  <!-- Public cible -->
+  <section class="py-16 lg:py-24 bg-slate-50/60">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <div class="inline-block px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-xs font-semibold text-purple-700 mb-4">
+          Pour qui
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          Conçu pour les PME qui travaillent en mode projet
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Nimble est un ERP compact pour les petites PME — pas la lourdeur d'un système à grande échelle, mais exactement les fonctions dont les organisations projet ont besoin au quotidien.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {doelgroepen.map((d) => (
+          <div class="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-xl">
+            <svg class="w-5 h-5 text-purple-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-slate-800 font-medium">{d}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 lg:py-24">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-2xl mb-12">
+        <div class="inline-block px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-xs font-semibold text-purple-700 mb-4">
+          Fonctions
+        </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-          Construit pour les organisations projet
+          Tout ce dont une organisation projet a besoin
         </h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
