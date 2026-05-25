@@ -64,7 +64,7 @@ export const ui = {
     "clients.heading": "Succesvolle samenwerkingen",
     "clients.intro":
       "Een greep uit de bedrijven die we sinds jaren ondersteunen met maatwerksoftware en onze platformen. Van kredietbemiddeling tot verzekeringen en projectmatige verhuur.",
-    "clients.readCase": "Lees de case",
+    "clients.visitWebsite": "Bezoek website",
     "clients.eurofinco": "Kredietbeheer en documentautomatisatie voor een toonaangevende speler in kredietbemiddeling.",
     "clients.cares": "Platform voor backoffice en portaalbeheer voor tussenpersonen, met geïntegreerde commissieberekening.",
     "clients.hypotheekwereld": "Centrale administratie voor een groepering van kredietmakelaars, met dossierbeheer en bankcommunicatie.",
@@ -192,7 +192,7 @@ export const ui = {
     "clients.heading": "Collaborations réussies",
     "clients.intro":
       "Un aperçu des entreprises que nous accompagnons depuis des années avec des logiciels sur mesure et nos plateformes. De l'intermédiation en crédit aux assurances et à la location événementielle.",
-    "clients.readCase": "Lire l'étude de cas",
+    "clients.visitWebsite": "Visiter le site",
     "clients.eurofinco": "Gestion des crédits et automatisation documentaire pour un acteur de référence en intermédiation de crédit.",
     "clients.cares": "Plateforme back-office et portail pour intermédiaires, avec calcul des commissions intégré.",
     "clients.hypotheekwereld": "Administration centralisée pour un groupement de courtiers en crédit, avec gestion des dossiers et communication bancaire.",

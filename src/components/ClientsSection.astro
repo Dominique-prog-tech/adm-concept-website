@@ -4,32 +4,30 @@ import { getLangFromUrl, useTranslations } from "../i18n/ui";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const blogBase = t("route.blog");
-
 const clients = [
   {
     name: "Eurofinco",
     logo: "/images/clients/eurofinco.webp",
     description: t("clients.eurofinco"),
-    caseHref: null,
+    href: "https://www.eurofinco.be",
   },
   {
     name: "Cares Assistance",
     logo: "/images/clients/cares-assistance.webp",
     description: t("clients.cares"),
-    caseHref: `${blogBase}/cares-assistance-lanceert-family-care`,
+    href: "https://www.cares-assistance.eu",
   },
   {
     name: "Hypotheekwereld",
     logo: "/images/clients/hypotheekwereld.webp",
     description: t("clients.hypotheekwereld"),
-    caseHref: null,
+    href: "https://www.hypotheekwereld.be",
   },
   {
     name: "Tentmoment",
     logo: "/images/clients/tentmoment.webp",
     description: t("clients.tentmoment"),
-    caseHref: `${blogBase}/overname-tentmoment-door-veldeman`,
+    href: "https://www.tentmoment.be",
   },
 ];
 ---
@@ -51,29 +49,35 @@ const clients = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {
         clients.map((c) => (
-          <article class="group flex flex-col p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-lg transition-all">
+          <a
+            href={c.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex flex-col p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:shadow-lg transition-all"
+            aria-label={`${c.name} — ${t("clients.visitWebsite")}`}
+          >
             <div class="h-16 flex items-center justify-start mb-5">
               <img
                 src={c.logo}
                 alt={`${c.name} logo`}
-                class="max-h-12 w-auto object-contain"
+                class="max-h-12 w-auto object-contain transition-transform group-hover:scale-105"
                 loading="lazy"
               />
             </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">{c.name}</h3>
-            <p class="text-sm text-slate-600 leading-relaxed flex-1">{c.description}</p>
-            {c.caseHref && (
-              <a
-                href={c.caseHref}
-                class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors"
+            <div class="flex items-center gap-2 mb-2">
+              <h3 class="text-lg font-bold text-slate-900">{c.name}</h3>
+              <svg
+                class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-600 transition-colors"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                {t("clients.readCase")}
-                <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            )}
-          </article>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">{c.description}</p>
+          </a>
         ))
       }
     </div>
