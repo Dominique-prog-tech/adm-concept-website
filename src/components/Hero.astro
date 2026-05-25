@@ -4,6 +4,7 @@ import { getLangFromUrl, useTranslations } from "../i18n/ui";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const yearsActive = new Date().getFullYear() - 1997;
 ---
 
 <section class="relative overflow-hidden bg-mesh-1">
@@ -82,7 +83,7 @@ const t = useTranslations(lang);
         <div
           class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
         >
-          25+
+          {yearsActive}
         </div>
         <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">
           {t("hero.stat1Label")}

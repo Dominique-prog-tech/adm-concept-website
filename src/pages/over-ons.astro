@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
+
+const yearsActive = new Date().getFullYear() - 1997;
 ---
 
 <BaseLayout
   title="Over ons — ADM-Concept"
-  description="25+ jaar ervaring in maatwerksoftware. Belgisch bedrijf, gevestigd in Waregem. Onze missie: software die werkt zoals uw organisatie werkt."
+  description={`${yearsActive} jaar ervaring in maatwerksoftware. Belgisch bedrijf, gevestigd in Waregem. Onze missie: software die werkt zoals uw organisatie werkt.`}
 >
   <!-- Hero with image -->
   <section class="relative py-16 lg:py-24 overflow-hidden">
@@ -16,13 +18,13 @@ import CTA from "../components/CTA.astro";
             Over ons
           </div>
           <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-            25+ jaar bouwen<br />
+            Sinds 1997 bouwen<br />
             aan Belgische software.
           </h1>
           <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-            Een kwart eeuw ervaring in het vertalen van bedrijfsprocessen naar
-            software die mensen graag gebruiken. Klein team, grote toewijding,
-            vanuit Waregem.
+            Bijna drie decennia ervaring in het vertalen van bedrijfsprocessen
+            naar software die mensen graag gebruiken. Klein team, grote
+            toewijding, vanuit Waregem.
           </p>
         </div>
         <div class="relative">
@@ -133,7 +135,7 @@ import CTA from "../components/CTA.astro";
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
         <div>
-          <div class="text-5xl font-extrabold text-slate-900 tracking-tight">25+</div>
+          <div class="text-5xl font-extrabold text-slate-900 tracking-tight">{yearsActive}</div>
           <div class="mt-2 text-sm text-slate-500 uppercase tracking-wider">Jaar ervaring</div>
         </div>
         <div>
@@ -142,7 +144,7 @@ import CTA from "../components/CTA.astro";
         </div>
         <div>
           <div class="text-5xl font-extrabold text-slate-900 tracking-tight">20+</div>
-          <div class="mt-2 text-sm text-slate-500 uppercase tracking-wider">Maatwerkprojecten</div>
+          <div class="mt-2 text-sm text-slate-500 uppercase tracking-wider">Actieve maatwerkprojecten</div>
         </div>
         <div>
           <div class="text-5xl font-extrabold text-slate-900 tracking-tight">100%</div>

@@ -24,10 +24,12 @@ export const ui = {
     // Footer
     "footer.productsHeading": "Producten",
     "footer.contactHeading": "Contact",
+    "footer.companyHeading": "Bedrijf",
+    "footer.home": "Home",
     "footer.customDev": "Maatwerk op aanvraag",
     "footer.blog": "Blog",
     "footer.tagline":
-      "Maatwerksoftware en digitale platformen voor bedrijven die efficiënter willen werken. 25+ jaar ervaring in het vertalen van bedrijfsprocessen naar gebruiksvriendelijke software.",
+      "Maatwerksoftware en digitale platformen voor bedrijven die efficiënter willen werken. Sinds 1997 vertalen we bedrijfsprocessen naar gebruiksvriendelijke software die jarenlang blijft mee-evolueren.",
     "footer.copyright": "Alle rechten voorbehouden.",
     "footer.privacy": "Privacy",
 
@@ -42,7 +44,7 @@ export const ui = {
     "product.documentation": "Documentatie",
 
     // Hero
-    "hero.badge": "Meer dan 25 jaar ervaring in maatwerksoftware",
+    "hero.badge": "Sinds 1997 in maatwerksoftware",
     "hero.headlineLine1": "Uw digitale partner,",
     "hero.headlineLine2": "op maat van uw bedrijf.",
     "hero.subheadline":
@@ -51,7 +53,7 @@ export const ui = {
     "hero.ctaSecondary": "Bekijk onze producten",
     "hero.stat1Label": "Jaar ervaring",
     "hero.stat2Label": "Eigen platforms",
-    "hero.stat3Label": "Maatwerkprojecten",
+    "hero.stat3Label": "Actieve maatwerkprojecten",
     "hero.stat4Label": "Made in Belgium",
 
     // DashboardMockup
@@ -157,10 +159,12 @@ export const ui = {
 
     "footer.productsHeading": "Produits",
     "footer.contactHeading": "Contact",
+    "footer.companyHeading": "Entreprise",
+    "footer.home": "Accueil",
     "footer.customDev": "Sur mesure sur demande",
     "footer.blog": "Blog",
     "footer.tagline":
-      "Logiciels sur mesure et plateformes numériques pour les entreprises qui veulent travailler plus efficacement. Plus de 25 ans d'expérience dans la traduction des processus métier en logiciels conviviaux.",
+      "Logiciels sur mesure et plateformes numériques pour les entreprises qui veulent travailler plus efficacement. Depuis 1997, nous traduisons les processus métier en logiciels conviviaux qui continuent d'évoluer au fil des années.",
     "footer.copyright": "Tous droits réservés.",
     "footer.privacy": "Confidentialité",
 
@@ -172,7 +176,7 @@ export const ui = {
     "product.moreInfo": "Plus d'infos",
     "product.documentation": "Documentation",
 
-    "hero.badge": "Plus de 25 ans d'expérience en logiciels sur mesure",
+    "hero.badge": "Depuis 1997 en logiciels sur mesure",
     "hero.headlineLine1": "Votre partenaire numérique,",
     "hero.headlineLine2": "sur mesure pour votre entreprise.",
     "hero.subheadline":
@@ -181,7 +185,7 @@ export const ui = {
     "hero.ctaSecondary": "Découvrir nos produits",
     "hero.stat1Label": "Ans d'expérience",
     "hero.stat2Label": "Plateformes propres",
-    "hero.stat3Label": "Projets sur mesure",
+    "hero.stat3Label": "Projets sur mesure actifs",
     "hero.stat4Label": "Made in Belgium",
 
     "mockup.dossiersApproved": "Dossiers approuvés",

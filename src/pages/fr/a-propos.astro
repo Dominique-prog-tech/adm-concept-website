@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CTA from "../../components/CTA.astro";
+
+const yearsActive = new Date().getFullYear() - 1997;
 ---
 
 <BaseLayout
   title="À propos — ADM-Concept"
-  description="Plus de 25 ans d'expérience en logiciels sur mesure. Entreprise belge, établie à Waregem. Notre mission : des logiciels qui fonctionnent comme votre organisation."
+  description={`${yearsActive} ans d'expérience en logiciels sur mesure. Entreprise belge, établie à Waregem. Notre mission : des logiciels qui fonctionnent comme votre organisation.`}
 >
   <!-- Hero with image -->
   <section class="relative py-16 lg:py-24 overflow-hidden">
@@ -16,13 +18,13 @@ import CTA from "../../components/CTA.astro";
             À propos
           </div>
           <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-            Plus de 25 ans à construire<br />
-            des logiciels belges.
+            Depuis 1997, des logiciels<br />
+            belges qui durent.
           </h1>
           <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-            Un quart de siècle d'expérience à traduire les processus métier en
-            logiciels que les gens utilisent avec plaisir. Petite équipe, grand
-            engagement, depuis Waregem.
+            Près de trois décennies d'expérience à traduire les processus métier
+            en logiciels que les gens utilisent avec plaisir. Petite équipe,
+            grand engagement, depuis Waregem.
           </p>
         </div>
         <div class="relative">
@@ -138,7 +140,7 @@ import CTA from "../../components/CTA.astro";
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
         <div>
-          <div class="text-5xl font-extrabold text-slate-900 tracking-tight">25+</div>
+          <div class="text-5xl font-extrabold text-slate-900 tracking-tight">{yearsActive}</div>
           <div class="mt-2 text-sm text-slate-500 uppercase tracking-wider">Ans d'expérience</div>
         </div>
         <div>
@@ -147,7 +149,7 @@ import CTA from "../../components/CTA.astro";
         </div>
         <div>
           <div class="text-5xl font-extrabold text-slate-900 tracking-tight">20+</div>
-          <div class="mt-2 text-sm text-slate-500 uppercase tracking-wider">Projets sur mesure</div>
+          <div class="mt-2 text-sm text-slate-500 uppercase tracking-wider">Projets sur mesure actifs</div>
         </div>
         <div>
           <div class="text-5xl font-extrabold text-slate-900 tracking-tight">100%</div>
