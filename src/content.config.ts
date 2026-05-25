@@ -15,4 +15,22 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const realisaties = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/realisaties" }),
+  schema: z.object({
+    title: z.string(),
+    customer: z.string(),
+    sector: z.string(),
+    platform: z.enum(["Maatwerk", "CreditSoft", "CleanOps", "Nimble"]).default("Maatwerk"),
+    year: z.string(),
+    summary: z.string(),
+    heroImage: z.string().optional(),
+    technologies: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
+    order: z.number().default(99),
+    lang: z.enum(["nl", "fr"]).default("nl"),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { blog, realisaties };
