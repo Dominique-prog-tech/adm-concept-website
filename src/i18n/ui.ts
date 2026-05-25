@@ -59,6 +59,17 @@ export const ui = {
     "mockup.revenueMonth": "Omzet deze maand",
     "mockup.new": "Nieuw",
 
+    // Clients section
+    "clients.badge": "Onze klanten",
+    "clients.heading": "Succesvolle samenwerkingen",
+    "clients.intro":
+      "Een greep uit de bedrijven die we sinds jaren ondersteunen met maatwerksoftware en onze platformen. Van kredietbemiddeling tot verzekeringen en projectmatige verhuur.",
+    "clients.readCase": "Lees de case",
+    "clients.eurofinco": "Kredietbeheer en documentautomatisatie voor een toonaangevende speler in kredietbemiddeling.",
+    "clients.cares": "Platform voor backoffice en portaalbeheer voor tussenpersonen, met geïntegreerde commissieberekening.",
+    "clients.hypotheekwereld": "Centrale administratie voor een groepering van kredietmakelaars, met dossierbeheer en bankcommunicatie.",
+    "clients.tentmoment": "Projectbeheer en planning voor verhuur, inclusief facturatie en internationale uitbreiding.",
+
     // CreditSoftMockup
     "cs.loaRunning": "LOA's lopend",
     "cs.loaExpiring": "3 vervallen binnen 7d",
@@ -176,6 +187,16 @@ export const ui = {
     "mockup.dossiersApproved": "Dossiers approuvés",
     "mockup.revenueMonth": "Chiffre d'affaires du mois",
     "mockup.new": "Nouveau",
+
+    "clients.badge": "Nos clients",
+    "clients.heading": "Collaborations réussies",
+    "clients.intro":
+      "Un aperçu des entreprises que nous accompagnons depuis des années avec des logiciels sur mesure et nos plateformes. De l'intermédiation en crédit aux assurances et à la location événementielle.",
+    "clients.readCase": "Lire l'étude de cas",
+    "clients.eurofinco": "Gestion des crédits et automatisation documentaire pour un acteur de référence en intermédiation de crédit.",
+    "clients.cares": "Plateforme back-office et portail pour intermédiaires, avec calcul des commissions intégré.",
+    "clients.hypotheekwereld": "Administration centralisée pour un groupement de courtiers en crédit, avec gestion des dossiers et communication bancaire.",
+    "clients.tentmoment": "Gestion de projet et planning pour la location, facturation incluse et expansion internationale.",
 
     "cs.loaRunning": "LOA en cours",
     "cs.loaExpiring": "3 expirent sous 7j",
