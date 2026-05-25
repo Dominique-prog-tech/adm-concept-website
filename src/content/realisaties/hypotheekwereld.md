@@ -66,7 +66,7 @@ Op de roadmap staat een uitbreiding van de portaalmodule die de structuur van Hy
 
 > **Hoofdkantoor → Individueel kantoor → Eigen aanbrengers**
 
-Concreet: een individueel kantoor zal via de portaalmodule ook **eigen aanbrengers** kunnen beheren. Het kantoor wordt dan zelf een "mini-hoofdzetel" voor zijn aanbrengers — met eigen commissieberekening, eigen borderellen en eigen fiches 281.50 op dat niveau. De architectuur die we voor de hoofdzetel bouwden, wordt gerecursief toegepast op het niveau van het individuele kantoor.
+Concreet: een individueel kantoor zal via de portaalmodule ook **eigen aanbrengers** kunnen beheren. Het kantoor wordt dan zelf een "mini-hoofdzetel" voor zijn aanbrengers — met eigen commissieberekening, eigen borderellen en eigen fiches 281.50 op dat niveau. De architectuur die we voor de hoofdzetel bouwden, wordt recursief toegepast op het niveau van het individuele kantoor.
 
 Naast die grotere lijn werken we **dagelijks aan kleinere verbeteringen** — een filter optimaliseren, een rapport verfijnen, een controleregel toevoegen, een BLUE-veldmapping bijwerken.
 

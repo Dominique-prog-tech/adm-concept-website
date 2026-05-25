@@ -63,7 +63,7 @@ Le système opérationnel existant a continué de tourner, les utilisateurs ont 
 
 ## Ce qui suit
 
-Le groupe continue d'investir dans la croissance, et la plateforme évolue avec lui. À la feuille de route : extensions du reporting, couplages plus fins avec les systèmes du groupe et fonctionnalités pour de nouveaux modèles de location.
+Le groupe continue d'investir dans la croissance, et la plateforme évolue avec lui. Sur la feuille de route : extensions du reporting, couplages plus fins avec les systèmes du groupe et fonctionnalités pour de nouveaux modèles de location.
 
 À côté de ces grandes lignes, nous travaillons **quotidiennement à des améliorations plus modestes** — un champ dans un écran de devis, un filtre sur la planification, un modèle Peppol à affiner, un rapport à étendre. Modeste en soi, mais ensemble ces ajustements livrent le confort qu'un utilisateur ressent au quotidien.
 

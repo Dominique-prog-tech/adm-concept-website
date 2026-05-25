@@ -62,9 +62,9 @@ Plus de double encodage, plus de documents qui errent — tout est dans CreditSo
 
 ## Ce qui suit : un troisième niveau
 
-À la feuille de route, une extension du module portail qui pousse plus loin la structure de Hypotheekwereld en **trois niveaux** :
+Sur la feuille de route, une extension du module portail qui pousse plus loin la structure de Hypotheekwereld en **trois niveaux** :
 
-> **Siège → Bureau individuel → Apporteurs d'affaires propres**
+> **Siège → Bureau individuel → Apporteurs d'affaires en propre**
 
 Concrètement : un bureau individuel pourra, via le module portail, gérer ses **propres apporteurs d'affaires**. Le bureau devient lui-même un "mini-siège" pour ses apporteurs — avec son propre calcul de commissions, ses propres bordereaux et ses propres fiches 281.50 à ce niveau. L'architecture que nous avons construite pour le siège sera appliquée récursivement au niveau du bureau individuel.
 
