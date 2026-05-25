@@ -320,13 +320,28 @@ export function getAlternateLanguagePath(currentPath: string, currentLang: Lang)
     "/blog": { nl: "/blog", fr: "/fr/blog" },
   };
 
+  // Sub-paden waar enkel de parent-slug verschilt en de slug erna
+  // identiek blijft (bv. /realisaties/<slug> <-> /fr/realisations/<slug>).
+  // Blog-posts hebben dezelfde URL-structuur in NL en FR (/blog/<slug>
+  // <-> /fr/blog/<slug>) dus die hebben deze mapping niet nodig.
+  const subPathMap: Array<{ nl: string; fr: string }> = [
+    { nl: "/realisaties/", fr: "/fr/realisations/" },
+    { nl: "/producten/", fr: "/fr/produits/" },
+  ];
+
   // Normaliseer huidige path (strip /fr/ prefix indien aanwezig)
   let normalizedPath = currentPath;
   if (currentLang === "fr") {
     // FR -> NL: vind welke NL-route bij deze FR-route hoort
-    for (const [nlPath, paths] of Object.entries(pathMap)) {
+    for (const [, paths] of Object.entries(pathMap)) {
       if (paths.fr === currentPath || paths.fr === currentPath.replace(/\/$/, "")) {
         return paths.nl;
+      }
+    }
+    // FR -> NL: sub-paden (bv. /fr/realisations/cares-assistance)
+    for (const { nl, fr } of subPathMap) {
+      if (currentPath.startsWith(fr)) {
+        return nl + currentPath.slice(fr.length);
       }
     }
     // Fallback: strip /fr prefix
@@ -340,6 +355,13 @@ export function getAlternateLanguagePath(currentPath: string, currentLang: Lang)
   }
   if (pathMap[currentPath]) {
     return pathMap[currentPath].fr;
+  }
+
+  // NL -> FR: sub-paden (bv. /realisaties/cares-assistance)
+  for (const { nl, fr } of subPathMap) {
+    if (currentPath.startsWith(nl)) {
+      return fr + currentPath.slice(nl.length);
+    }
   }
 
   // Fallback: prepend /fr
