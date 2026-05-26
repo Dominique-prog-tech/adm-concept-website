@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import CTA from "../../../components/CTA.astro";
+import CaseHeroBanner from "../../../components/CaseHeroBanner.astro";
 import { getCollection } from "astro:content";
 
 const cases = (await getCollection("realisaties", ({ data }) => !data.draft && data.lang === "fr"))
@@ -60,7 +61,18 @@ const slugOf = (id: string) => id.replace(/^fr\//, "");
           {featured.map((c) => (
             <a href={`/fr/realisations/${slugOf(c.id)}`}
               class="group relative overflow-hidden rounded-3xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
-              {c.data.heroImage && (
+              {c.data.customerLogo && c.data.brandColor ? (
+                <div class="group-hover:[&_img]:scale-105 [&_img]:transition-transform [&_img]:duration-500">
+                  <CaseHeroBanner
+                    customer={c.data.customer}
+                    customerLogo={c.data.customerLogo}
+                    brandColor={c.data.brandColor}
+                    year={c.data.year}
+                    language="fr"
+                    variant="card"
+                  />
+                </div>
+              ) : c.data.heroImage && (
                 <div class="aspect-[16/9] overflow-hidden bg-slate-100">
                   <img src={c.data.heroImage} alt={c.data.customer}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />

@@ -14,9 +14,17 @@ interface Props {
   brandColor: string;
   year: string;
   language: "nl" | "fr";
+  /**
+   * `full` = volledige banner met partnership-tekst en jaartal-accent — voor
+   *           de detail-pagina van een realisatie.
+   * `card` = alleen gradient + decoraties + logo, geen partnership-tekst —
+   *          voor inbedding in een card op de overzichtspagina.
+   */
+  variant?: "full" | "card";
 }
 
-const { customer, customerLogo, brandColor, year, language } = Astro.props;
+const { customer, customerLogo, brandColor, year, language, variant = "full" } = Astro.props;
+const isCard = variant === "card";
 
 // Tailwind purge vereist letterlijke klasse-namen — lookup-map per kleur.
 const gradients: Record<string, string> = {
@@ -123,7 +131,9 @@ const tagline = language === "fr" ? taglineFr : taglineNl;
 ---
 
 <section
-  class={`relative overflow-hidden rounded-3xl shadow-2xl border ${border} bg-gradient-to-br ${gradient} aspect-[16/9] w-full`}
+  class={`relative overflow-hidden bg-gradient-to-br ${gradient} aspect-[16/9] w-full ${
+    isCard ? "" : `rounded-3xl shadow-2xl border ${border}`
+  }`}
 >
   {/* Subtiele dot-grid achtergrond */}
   <div
@@ -183,35 +193,50 @@ const tagline = language === "fr" ? taglineFr : taglineNl;
     ></path>
   </svg>
 
-  {/* Centrale content: logo-kaart + partnership-accent */}
-  <div class="absolute inset-0 flex items-center justify-center px-6 lg:px-12">
-    <div
-      class="flex flex-col lg:flex-row items-center gap-6 lg:gap-12 w-full max-w-3xl"
-    >
+  {/* Centrale content: logo-kaart (+ optioneel partnership-accent) */}
+  {isCard ? (
+    <div class="absolute inset-0 flex items-center justify-center px-6">
       <div
-        class="bg-white rounded-2xl shadow-xl shadow-slate-900/10 p-6 lg:p-10 w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 flex items-center justify-center flex-shrink-0"
+        class="bg-white rounded-2xl shadow-xl shadow-slate-900/10 p-6 sm:p-8 w-32 h-32 sm:w-40 sm:h-40 lg:w-44 lg:h-44 flex items-center justify-center"
       >
         <img
           src={customerLogo}
           alt={`${customer} logo`}
           class="max-w-full max-h-full object-contain"
-          loading="eager"
+          loading="lazy"
         />
       </div>
-
-      <div class="text-center lg:text-left">
-        <div class={`text-xs font-bold uppercase tracking-widest ${accent}`}>
-          {partnershipLabel}
-        </div>
+    </div>
+  ) : (
+    <div class="absolute inset-0 flex items-center justify-center px-6 lg:px-12">
+      <div
+        class="flex flex-col lg:flex-row items-center gap-6 lg:gap-12 w-full max-w-3xl"
+      >
         <div
-          class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mt-2 leading-none"
+          class="bg-white rounded-2xl shadow-xl shadow-slate-900/10 p-6 lg:p-10 w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 flex items-center justify-center flex-shrink-0"
         >
-          {year}
+          <img
+            src={customerLogo}
+            alt={`${customer} logo`}
+            class="max-w-full max-h-full object-contain"
+            loading="eager"
+          />
         </div>
-        <div class="mt-3 text-sm text-slate-600 max-w-xs mx-auto lg:mx-0">
-          {tagline}
+
+        <div class="text-center lg:text-left">
+          <div class={`text-xs font-bold uppercase tracking-widest ${accent}`}>
+            {partnershipLabel}
+          </div>
+          <div
+            class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mt-2 leading-none"
+          >
+            {year}
+          </div>
+          <div class="mt-3 text-sm text-slate-600 max-w-xs mx-auto lg:mx-0">
+            {tagline}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  )}
 </section>
