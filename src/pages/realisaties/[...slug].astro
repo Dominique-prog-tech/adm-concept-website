@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CTA from "../../components/CTA.astro";
+import CaseHeroBanner from "../../components/CaseHeroBanner.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -87,7 +88,19 @@ const capabilitiesHeading = "Wat het platform vandaag doet";
     </div>
   </section>
 
-  {entry.data.heroImage && (
+  {entry.data.customerLogo && entry.data.brandColor ? (
+    <section class="py-6">
+      <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <CaseHeroBanner
+          customer={entry.data.customer}
+          customerLogo={entry.data.customerLogo}
+          brandColor={entry.data.brandColor}
+          year={entry.data.year}
+          language="nl"
+        />
+      </div>
+    </section>
+  ) : entry.data.heroImage && (
     <section class="py-6">
       <div class="max-w-5xl mx-auto px-6 lg:px-8">
         <img src={entry.data.heroImage} alt={entry.data.customer}

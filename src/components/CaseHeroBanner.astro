@@ -1,0 +1,217 @@
+---
+// Visuele hero-banner voor een realisatie-detailpagina.
+// Vervangt de standaard heroImage door een gestylede branded banner met
+// het klantlogo in een witte kaart, gradient achtergrond, abstracte
+// decoratieve elementen en een partnership-accent. Volledig in Astro/Tailwind
+// — geen externe afbeeldingen nodig naast het klantlogo zelf.
+//
+// Gebruik vereist dat `customerLogo` en `brandColor` zijn gezet in de
+// case-frontmatter. Wordt aangeroepen vanuit de [...slug].astro templates.
+
+interface Props {
+  customer: string;
+  customerLogo: string;
+  brandColor: string;
+  year: string;
+  language: "nl" | "fr";
+}
+
+const { customer, customerLogo, brandColor, year, language } = Astro.props;
+
+// Tailwind purge vereist letterlijke klasse-namen — lookup-map per kleur.
+const gradients: Record<string, string> = {
+  sky: "from-sky-50 via-white to-sky-100",
+  blue: "from-blue-50 via-white to-blue-100",
+  teal: "from-teal-50 via-white to-teal-100",
+  purple: "from-purple-50 via-white to-purple-100",
+  indigo: "from-indigo-50 via-white to-indigo-100",
+  emerald: "from-emerald-50 via-white to-emerald-100",
+  rose: "from-rose-50 via-white to-rose-100",
+  amber: "from-amber-50 via-white to-amber-100",
+  violet: "from-violet-50 via-white to-violet-100",
+  cyan: "from-cyan-50 via-white to-cyan-100",
+  fuchsia: "from-fuchsia-50 via-white to-fuchsia-100",
+  slate: "from-slate-50 via-white to-slate-100",
+};
+
+const borderColors: Record<string, string> = {
+  sky: "border-sky-200/60",
+  blue: "border-blue-200/60",
+  teal: "border-teal-200/60",
+  purple: "border-purple-200/60",
+  indigo: "border-indigo-200/60",
+  emerald: "border-emerald-200/60",
+  rose: "border-rose-200/60",
+  amber: "border-amber-200/60",
+  violet: "border-violet-200/60",
+  cyan: "border-cyan-200/60",
+  fuchsia: "border-fuchsia-200/60",
+  slate: "border-slate-200/60",
+};
+
+const blob1: Record<string, string> = {
+  sky: "bg-sky-200",
+  blue: "bg-blue-200",
+  teal: "bg-teal-200",
+  purple: "bg-purple-200",
+  indigo: "bg-indigo-200",
+  emerald: "bg-emerald-200",
+  rose: "bg-rose-200",
+  amber: "bg-amber-200",
+  violet: "bg-violet-200",
+  cyan: "bg-cyan-200",
+  fuchsia: "bg-fuchsia-200",
+  slate: "bg-slate-200",
+};
+
+const blob2: Record<string, string> = {
+  sky: "bg-sky-300",
+  blue: "bg-blue-300",
+  teal: "bg-teal-300",
+  purple: "bg-purple-300",
+  indigo: "bg-indigo-300",
+  emerald: "bg-emerald-300",
+  rose: "bg-rose-300",
+  amber: "bg-amber-300",
+  violet: "bg-violet-300",
+  cyan: "bg-cyan-300",
+  fuchsia: "bg-fuchsia-300",
+  slate: "bg-slate-300",
+};
+
+const accentText: Record<string, string> = {
+  sky: "text-sky-700",
+  blue: "text-blue-700",
+  teal: "text-teal-700",
+  purple: "text-purple-700",
+  indigo: "text-indigo-700",
+  emerald: "text-emerald-700",
+  rose: "text-rose-700",
+  amber: "text-amber-700",
+  violet: "text-violet-700",
+  cyan: "text-cyan-700",
+  fuchsia: "text-fuchsia-700",
+  slate: "text-slate-700",
+};
+
+const accentSoft: Record<string, string> = {
+  sky: "text-sky-300",
+  blue: "text-blue-300",
+  teal: "text-teal-300",
+  purple: "text-purple-300",
+  indigo: "text-indigo-300",
+  emerald: "text-emerald-300",
+  rose: "text-rose-300",
+  amber: "text-amber-300",
+  violet: "text-violet-300",
+  cyan: "text-cyan-300",
+  fuchsia: "text-fuchsia-300",
+  slate: "text-slate-300",
+};
+
+const gradient = gradients[brandColor] ?? gradients.sky;
+const border = borderColors[brandColor] ?? borderColors.sky;
+const blob1Class = blob1[brandColor] ?? blob1.sky;
+const blob2Class = blob2[brandColor] ?? blob2.sky;
+const accent = accentText[brandColor] ?? accentText.sky;
+const accentLight = accentSoft[brandColor] ?? accentSoft.sky;
+
+const partnershipLabel = language === "fr" ? "Partenariat" : "Partnership";
+const taglineFr = "Une plateforme qui évolue jour après jour avec le client";
+const taglineNl = "Een platform dat dagelijks mee-evolueert met de klant";
+const tagline = language === "fr" ? taglineFr : taglineNl;
+---
+
+<section
+  class={`relative overflow-hidden rounded-3xl shadow-2xl border ${border} bg-gradient-to-br ${gradient} aspect-[16/9] w-full`}
+>
+  {/* Subtiele dot-grid achtergrond */}
+  <div
+    class="absolute inset-0 opacity-[0.05]"
+    style="background-image: radial-gradient(circle at 1px 1px, #0f172a 1px, transparent 0); background-size: 26px 26px;"
+  >
+  </div>
+
+  {/* Grote vervaagde brand-color blobs voor diepte */}
+  <div
+    class={`absolute -top-20 -right-24 w-80 h-80 ${blob1Class} rounded-full blur-3xl opacity-50 pointer-events-none`}
+  >
+  </div>
+  <div
+    class={`absolute -bottom-24 -left-20 w-96 h-96 ${blob2Class} rounded-full blur-3xl opacity-30 pointer-events-none`}
+  >
+  </div>
+
+  {/* Decoratieve verbindings-lijnen (netwerk metaphor — partnership) */}
+  <svg
+    class={`absolute top-6 right-6 lg:top-10 lg:right-10 w-24 h-24 lg:w-32 lg:h-32 ${accentLight} opacity-40 pointer-events-none`}
+    viewBox="0 0 100 100"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.2"
+    aria-hidden="true"
+  >
+    <circle cx="20" cy="20" r="3" fill="currentColor"></circle>
+    <circle cx="80" cy="20" r="3" fill="currentColor"></circle>
+    <circle cx="50" cy="50" r="3" fill="currentColor"></circle>
+    <circle cx="20" cy="80" r="3" fill="currentColor"></circle>
+    <circle cx="80" cy="80" r="3" fill="currentColor"></circle>
+    <line x1="20" y1="20" x2="50" y2="50"></line>
+    <line x1="80" y1="20" x2="50" y2="50"></line>
+    <line x1="20" y1="80" x2="50" y2="50"></line>
+    <line x1="80" y1="80" x2="50" y2="50"></line>
+    <line x1="20" y1="20" x2="80" y2="20" stroke-dasharray="2 3"></line>
+    <line x1="20" y1="80" x2="80" y2="80" stroke-dasharray="2 3"></line>
+  </svg>
+
+  <svg
+    class={`absolute bottom-6 left-6 lg:bottom-10 lg:left-10 w-20 h-20 lg:w-28 lg:h-28 ${accentLight} opacity-30 pointer-events-none`}
+    viewBox="0 0 100 100"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.2"
+    aria-hidden="true"
+  >
+    <path
+      d="M 10 50 Q 30 20, 50 50 T 90 50"
+      stroke-dasharray="3 4"
+    ></path>
+    <path d="M 10 65 Q 30 35, 50 65 T 90 65"></path>
+    <path
+      d="M 10 35 Q 30 5, 50 35 T 90 35"
+      stroke-dasharray="3 4"
+    ></path>
+  </svg>
+
+  {/* Centrale content: logo-kaart + partnership-accent */}
+  <div class="absolute inset-0 flex items-center justify-center px-6 lg:px-12">
+    <div
+      class="flex flex-col lg:flex-row items-center gap-6 lg:gap-12 w-full max-w-3xl"
+    >
+      <div
+        class="bg-white rounded-2xl shadow-xl shadow-slate-900/10 p-6 lg:p-10 w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 flex items-center justify-center flex-shrink-0"
+      >
+        <img
+          src={customerLogo}
+          alt={`${customer} logo`}
+          class="max-w-full max-h-full object-contain"
+          loading="eager"
+        />
+      </div>
+
+      <div class="text-center lg:text-left">
+        <div class={`text-xs font-bold uppercase tracking-widest ${accent}`}>
+          {partnershipLabel}
+        </div>
+        <div
+          class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mt-2 leading-none"
+        >
+          {year}
+        </div>
+        <div class="mt-3 text-sm text-slate-600 max-w-xs mx-auto lg:mx-0">
+          {tagline}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

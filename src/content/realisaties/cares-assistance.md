@@ -6,6 +6,8 @@ platform: "Maatwerk"
 year: "Sinds 2020"
 summary: "Sinds 2020 bouwen en evolueren we voor Cares Assistance een compleet verzekeringsplatform dat polisbeheer, financiële opvolging, commissies en een tussenpersonenportaal samenbrengt. Elke maand groeit het mee met hun activiteiten — recentste mijlpaal: de Family Care productlancering."
 heroImage: "/images/business-meeting.jpg"
+customerLogo: "/images/clients/cares-assistance.webp"
+brandColor: rose
 technologies:
   - REST API
   - Maatwerksoftware

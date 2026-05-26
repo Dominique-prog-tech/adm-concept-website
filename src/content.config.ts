@@ -25,6 +25,23 @@ const realisaties = defineCollection({
     year: z.string(),
     summary: z.string(),
     heroImage: z.string().optional(),
+    customerLogo: z.string().optional(),
+    brandColor: z
+      .enum([
+        "sky",
+        "blue",
+        "teal",
+        "purple",
+        "indigo",
+        "emerald",
+        "rose",
+        "amber",
+        "violet",
+        "cyan",
+        "fuchsia",
+        "slate",
+      ])
+      .optional(),
     technologies: z.array(z.string()).default([]),
     capabilities: z
       .array(
