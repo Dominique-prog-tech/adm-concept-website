@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogHeroBanner from "../../../components/BlogHeroBanner.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft && data.lang === "fr"))
@@ -54,7 +55,17 @@ const slugOf = (id: string) => id.replace(/^fr\//, "");
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
               <article class="group flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-300 hover:shadow-xl transition-all duration-300">
-                {post.data.image && (
+                {post.data.bannerColor && (post.data.bannerLogo || post.data.bannerIcon) ? (
+                  <a href={`/fr/blog/${slugOf(post.id)}`} class="block group-hover:[&_img]:scale-105 [&_img]:transition-transform [&_img]:duration-500">
+                    <BlogHeroBanner
+                      bannerColor={post.data.bannerColor}
+                      bannerLogo={post.data.bannerLogo}
+                      bannerIcon={post.data.bannerIcon}
+                      alt={post.data.title}
+                      variant="card"
+                    />
+                  </a>
+                ) : post.data.image && (
                   <a href={`/fr/blog/${slugOf(post.id)}`} class="block aspect-[16/9] overflow-hidden bg-slate-100">
                     <img
                       src={post.data.image}

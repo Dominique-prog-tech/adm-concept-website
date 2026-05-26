@@ -5,6 +5,8 @@ pubDate: 2026-01-30
 author: "Dominique Bernaert"
 tags: ["Étude de cas", "Tentmoment", "Veldeman", "Sur mesure", "Location"]
 image: "/images/team-collaboration.jpg"
+bannerColor: amber
+bannerLogo: "/images/clients/tentmoment.webp"
 lang: "fr"
 ---
 

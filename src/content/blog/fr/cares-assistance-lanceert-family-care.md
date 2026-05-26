@@ -5,6 +5,8 @@ pubDate: 2026-01-30
 author: "Dominique Bernaert"
 tags: ["Étude de cas", "Cares Assistance", "Sur mesure", "Assurances"]
 image: "/images/business-meeting.jpg"
+bannerColor: rose
+bannerLogo: "/images/clients/cares-assistance.webp"
 lang: "fr"
 ---
 

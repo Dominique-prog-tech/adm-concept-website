@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CTA from "../../components/CTA.astro";
+import BlogHeroBanner from "../../components/BlogHeroBanner.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -69,7 +70,18 @@ const allPosts = (await getCollection("blog", ({ data }) => !data.draft && data.
   </section>
 
   {
-    post.data.image && (
+    post.data.bannerColor && (post.data.bannerLogo || post.data.bannerIcon) ? (
+      <section class="py-8">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+          <BlogHeroBanner
+            bannerColor={post.data.bannerColor}
+            bannerLogo={post.data.bannerLogo}
+            bannerIcon={post.data.bannerIcon}
+            alt={post.data.title}
+          />
+        </div>
+      </section>
+    ) : post.data.image && (
       <section class="py-8">
         <div class="max-w-5xl mx-auto px-6 lg:px-8">
           <img

@@ -5,6 +5,8 @@ pubDate: 2026-01-30
 author: "Dominique Bernaert"
 tags: ["Peppol", "E-facturatie", "Maatwerk", "Regelgeving"]
 image: "/images/tech-laptop.jpg"
+bannerColor: emerald
+bannerIcon: currency
 ---
 
 Digitale facturatie in België gaat een nieuwe fase in. Vanaf **1 januari 2026** wordt het gebruik van **Peppol verplicht voor alle B2B-facturen**. ADM-Concept biedt daarom volledige Peppol-ondersteuning in al haar maatwerkplatformen aan, zodat onze klanten conform de regelgeving digitaal kunnen factureren — rechtstreeks vanuit hun bestaande softwareomgeving.

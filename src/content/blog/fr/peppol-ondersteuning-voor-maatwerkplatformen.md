@@ -5,6 +5,8 @@ pubDate: 2026-01-30
 author: "Dominique Bernaert"
 tags: ["Peppol", "Facturation électronique", "Sur mesure", "Réglementation"]
 image: "/images/tech-laptop.jpg"
+bannerColor: emerald
+bannerIcon: currency
 lang: "fr"
 ---
 

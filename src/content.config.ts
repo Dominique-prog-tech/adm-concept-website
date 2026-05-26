@@ -10,6 +10,35 @@ const blog = defineCollection({
     author: z.string().default("Dominique Bernaert"),
     tags: z.array(z.string()).default([]),
     image: z.string().optional(),
+    bannerColor: z
+      .enum([
+        "sky",
+        "blue",
+        "teal",
+        "purple",
+        "indigo",
+        "emerald",
+        "rose",
+        "amber",
+        "violet",
+        "cyan",
+        "fuchsia",
+        "slate",
+      ])
+      .optional(),
+    bannerLogo: z.string().optional(),
+    bannerIcon: z
+      .enum([
+        "document",
+        "currency",
+        "users",
+        "computer",
+        "link",
+        "layers",
+        "chart",
+        "sparkle",
+      ])
+      .optional(),
     draft: z.boolean().default(false),
     lang: z.enum(["nl", "fr"]).default("nl"),
   }),
