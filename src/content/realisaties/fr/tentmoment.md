@@ -6,6 +6,8 @@ platform: "Maatwerk"
 year: "Depuis 2016"
 summary: "Depuis 2016, nous construisons et faisons évoluer pour Tentmoment une plateforme ERP complète : de la gestion d'articles avec articles composés et contrôle de stock dynamique, aux devis, contrats et bons de travail, en passant par la planification visuelle de montage et démontage, jusqu'à la facturation via Peppol et le transfert automatique vers Wings. Depuis le rachat par le groupe Veldeman, la plateforme évolue avec la montée en échelle internationale."
 heroImage: "/images/team-collaboration.jpg"
+customerLogo: "/images/clients/tentmoment.webp"
+brandColor: amber
 technologies:
   - Logiciel sur mesure
   - REST API
