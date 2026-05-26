@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import rehypeExternalLinks from 'rehype-external-links';
 
 const SITE = 'https://www.adm-concept.be';
 
@@ -52,6 +53,21 @@ export default defineConfig({
     routing: {
       prefixDefaultLocale: false,
     },
+  },
+  markdown: {
+    // Externe links in markdown-content (cases, blog) openen in een nieuw
+    // tabblad met de juiste rel-attributen. Belangrijk: GEEN `nofollow` —
+    // klantlinks (cares-assistance.eu, tentmoment.be, hypotheekwereld.be,
+    // ...) blijven de co-citation SEO-waarde behouden voor beide partijen.
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          target: '_blank',
+          rel: ['noopener', 'noreferrer'],
+        },
+      ],
+    ],
   },
   integrations: [
     sitemap({
