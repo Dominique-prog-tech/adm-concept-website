@@ -53,7 +53,7 @@ Het CreditSoft-portaal bestond al, maar de werking van Hypotheekwereld vroeg om 
 
 ## Recente mijlpaal: BLUE-integratie
 
-De **nieuwste stap** is de koppeling met **BLUE** — het centrale platform dat in België wordt gebruikt voor de indiening van hypothecaire dossiers bij de verschillende banken. De flow vandaag:
+De **nieuwste stap** is de koppeling met [**BLUE**](https://ariane-project.odoo.com/nl/blue) — het centrale platform dat in België wordt gebruikt voor de indiening van hypothecaire dossiers bij de verschillende banken. De flow vandaag:
 
 1. Een dossier wordt opgestart in CreditSoft en doorgestuurd naar BLUE
 2. Via BLUE wordt het dossier ingediend bij de gewenste Belgische banken

@@ -53,7 +53,7 @@ Le portail CreditSoft existait déjà, mais le fonctionnement de Hypotheekwereld
 
 ## Étape récente : l'intégration BLUE
 
-La **nouveauté la plus récente** est le couplage avec **BLUE** — la plateforme centrale utilisée en Belgique pour l'introduction des dossiers hypothécaires auprès des différentes banques. Le flux d'aujourd'hui :
+La **nouveauté la plus récente** est le couplage avec [**BLUE**](https://ariane-project.odoo.com/blue) — la plateforme centrale utilisée en Belgique pour l'introduction des dossiers hypothécaires auprès des différentes banques. Le flux d'aujourd'hui :
 
 1. Un dossier est démarré dans CreditSoft et transmis à BLUE
 2. Via BLUE, le dossier est introduit auprès des banques belges souhaitées

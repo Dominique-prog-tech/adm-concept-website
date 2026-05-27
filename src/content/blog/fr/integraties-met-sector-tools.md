@@ -10,7 +10,7 @@ bannerIcon: link
 lang: "fr"
 ---
 
-Une PME ne travaille jamais avec un seul logiciel. Un courtier en crédit utilise CreditSoft pour ses dossiers, mais les soumet via **BLUE** aux banques. Une entreprise de nettoyage compte sur CleanOps pour la planification, mais facture dans Wings ou Octopus. Un utilisateur d'ERP travaille avec Nimble, mais souhaite garder sa comptabilité dans Exact Online.
+Une PME ne travaille jamais avec un seul logiciel. Un courtier en crédit utilise CreditSoft pour ses dossiers, mais les soumet via [**BLUE**](https://ariane-project.odoo.com/blue) aux banques. Une entreprise de nettoyage compte sur CleanOps pour la planification, mais facture dans Wings ou Octopus. Un utilisateur d'ERP travaille avec Nimble, mais souhaite garder sa comptabilité dans Exact Online.
 
 Une plateforme fermée oblige le client à une **double saisie** : tout ce qui est enregistré dans un outil doit être manuellement repris dans l'autre. Perte de temps, risque d'erreur, frustration.
 

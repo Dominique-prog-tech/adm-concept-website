@@ -9,7 +9,7 @@ bannerColor: cyan
 bannerIcon: link
 ---
 
-Een KMO werkt nooit met één softwarepakket. Een kredietmakelaar gebruikt CreditSoft voor de dossiers, maar dient ze in via **BLUE** bij de banken. Een schoonmaakbedrijf rekent op CleanOps voor de planning, maar boekt in Wings of Octopus. Een ERP-gebruiker werkt met Nimble, maar wil de boekhouding in Exact Online houden.
+Een KMO werkt nooit met één softwarepakket. Een kredietmakelaar gebruikt CreditSoft voor de dossiers, maar dient ze in via [**BLUE**](https://ariane-project.odoo.com/nl/blue) bij de banken. Een schoonmaakbedrijf rekent op CleanOps voor de planning, maar boekt in Wings of Octopus. Een ERP-gebruiker werkt met Nimble, maar wil de boekhouding in Exact Online houden.
 
 Een platform dat zich gesloten opstelt, dwingt de klant tot **dubbele invoer**: alles wat in de ene tool wordt geregistreerd, moet handmatig in de andere worden overgenomen. Tijdverlies, foutgevoeligheid, frustratie.
 
