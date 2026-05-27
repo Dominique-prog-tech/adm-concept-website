@@ -20,13 +20,13 @@ ADM-Concept choisit le principe inverse : **l'intégration comme partie intégra
 
 **Avec les plateformes sectorielles** comme BLUE dans le secteur du crédit ou Peppol pour la facturation B2B. Infrastructure standardisée utilisée par tout le secteur, et qui reçoit régulièrement de nouveaux standards (Peppol devient par exemple obligatoire à partir du 1er janvier 2026).
 
-**Avec les systèmes clients** comme Wings, Exact Online ou Octopus pour la comptabilité, Microsoft 365 pour l'agenda et le mail, ou les plateformes CRM. Des logiciels que le client utilise déjà et qu'il ne veut pas abandonner parce que nous arrivons.
+**Avec les systèmes clients** comme Wings, Exact Online ou Octopus pour la comptabilité, Microsoft 365 pour l'agenda et le mail, ou les plateformes CRM. Des logiciels que le client utilise déjà et qu'il ne souhaite pas devoir abandonner lorsqu'un nouveau logiciel s'ajoute à son écosystème.
 
 ## Exemples concrets dans nos plateformes
 
 **CreditSoft × BLUE** — les dossiers de crédit sont démarrés dans CreditSoft, soumis via BLUE aux banques, et la réponse est automatiquement reprise. Plus de double saisie. Nous avons construit ce flux avec [Hypotheekwereld](/fr/realisations/hypotheekwereld), un groupement de bureaux de crédit indépendants où ce processus tourne quotidiennement. [Lisez l'approfondissement technique sur le blog CreditSoft](https://www.creditsoft.be/fr/blog/blue-integratie-creditsoft).
 
-**Toutes les plateformes × Peppol** — les factures B2B sont envoyées numériquement aux clients sans manipulation supplémentaire. [En savoir plus sur notre approche Peppol](/fr/blog/peppol-ondersteuning-voor-maatwerkplatformen).
+**Toutes les plateformes × Peppol** — les factures B2B sont envoyées électroniquement aux clients sans manipulation supplémentaire. [En savoir plus sur notre approche Peppol](/fr/blog/peppol-ondersteuning-voor-maatwerkplatformen).
 
 **Nimble × Exact Online** — couplage intégré pour la comptabilité. **CleanOps × Wings** pour le transfert des factures. **Tentmoment × Peppol** pour les factures B2B vers les clients événementiels.
 
@@ -34,7 +34,7 @@ ADM-Concept choisit le principe inverse : **l'intégration comme partie intégra
 
 Les clients qui travaillent le **plus longtemps** avec nous — Cares Assistance depuis 2020, Hypotheekwereld depuis 2020, Tentmoment depuis 2016 — ne sont pas par hasard les clients pour lesquels nous avons construit le plus d'intégrations.
 
-L'intégration signifie que le logiciel **évolue avec** l'écosystème plus large du client : nouveaux outils qu'ils adoptent, nouvelles réglementations qui les obligent (comme Peppol), nouveaux partenaires avec qui ils veulent se coupler. C'est la force du sur mesure qui s'ouvre.
+L'intégration signifie que le logiciel **évolue avec** l'écosystème plus large du client : nouveaux outils qu'il adopte, nouvelles réglementations qui l'obligent (comme Peppol), nouveaux partenaires avec qui il veut se coupler. C'est la force du sur-mesure qui s'ouvre.
 
 Pas d'îles, mais des ponts.
 

@@ -9,7 +9,7 @@ bannerColor: cyan
 bannerIcon: link
 ---
 
-Een KMO werkt nooit met één softwarepakket. Een kredietmakelaar gebruikt CreditSoft voor zijn dossiers, maar dient ze in via **BLUE** bij de banken. Een schoonmaakbedrijf rekent op CleanOps voor de planning, maar boekt in Wings of Octopus. Een ERP-gebruiker werkt met Nimble, maar wil zijn boekhouding in Exact Online houden.
+Een KMO werkt nooit met één softwarepakket. Een kredietmakelaar gebruikt CreditSoft voor de dossiers, maar dient ze in via **BLUE** bij de banken. Een schoonmaakbedrijf rekent op CleanOps voor de planning, maar boekt in Wings of Octopus. Een ERP-gebruiker werkt met Nimble, maar wil de boekhouding in Exact Online houden.
 
 Een platform dat zich gesloten opstelt, dwingt de klant tot **dubbele invoer**: alles wat in de ene tool wordt geregistreerd, moet handmatig in de andere worden overgenomen. Tijdverlies, foutgevoeligheid, frustratie.
 
@@ -17,9 +17,9 @@ ADM-Concept kiest voor het tegenovergestelde principe: **integratie als deel van
 
 ## Twee types integraties
 
-**Met sector-platformen** zoals BLUE in de kredietsector of Peppol voor B2B-facturatie. Gestandaardiseerde infrastructuur die de hele sector gebruikt, en die regelmatig nieuwe standaarden krijgt (Peppol wordt bijvoorbeeld verplicht vanaf 1 januari 2026).
+**Met sectorplatformen** zoals BLUE in de kredietsector of Peppol voor B2B-facturatie. Gestandaardiseerde infrastructuur die de hele sector deelt, en waar regelmatig nieuwe standaarden bijkomen (Peppol wordt bijvoorbeeld verplicht vanaf 1 januari 2026).
 
-**Met klant-systemen** zoals Wings, Exact Online of Octopus voor de boekhouding, Microsoft 365 voor agenda en mail, of CRM-platformen. Software die de klant zelf al gebruikt en niet wil opgeven omdat we er nu komen.
+**Met klantsystemen** zoals Wings, Exact Online of Octopus voor de boekhouding, Microsoft 365 voor agenda en mail, of CRM-platformen. Software die de klant al gebruikt en die niet plots overboord moet wanneer er nieuwe software bijkomt.
 
 ## Concrete voorbeelden in onze platformen
 
