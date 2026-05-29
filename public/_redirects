@@ -18,13 +18,15 @@
 
 # === Oude WordPress/Odoo paden (404's uit Search Console, mei 2026) ===
 
-# Blogposts: oude slugs -> nieuwe (specifiek, vóór de catch-all)
-/blogs/post/cares-assistance-lanceert-nieuw-product-family-care                  /blog/cares-assistance-lanceert-family-care         301
-/cares-assistance-lanceert-nieuw-product-family-care                             /blog/cares-assistance-lanceert-family-care         301
-/cares-assistance-lanceert-nieuw-product-family-care/*                           /blog/cares-assistance-lanceert-family-care         301
-/blogs/post/overname-tentmoment-veldeman                                         /blog/overname-tentmoment-door-veldeman             301
-/blogs/post/peppol-ondersteuning-nu-beschikbaar-voor-al-onze-maatwerkplatformen  /blog/peppol-ondersteuning-voor-maatwerkplatformen  301
-# Blog-index + overige oude blog-paden (author, categorie, ...) -> blog
+# Oude WordPress-permalink van deze blogpost -> exacte post.
+# (Werkt wél: geen concurrerende catch-all op dit top-level pad.)
+/cares-assistance-lanceert-nieuw-product-family-care     /blog/cares-assistance-lanceert-family-care   301
+/cares-assistance-lanceert-nieuw-product-family-care/*   /blog/cares-assistance-lanceert-family-care   301
+# Alle oude /blogs/... paden (posts, author, categorie) -> blog-index.
+# NB: Cloudflare Pages laat de splat /blogs/* voorgaan op specifiekere
+# /blogs/post/<slug>-regels (ongeacht volgorde), dus losse post-redirects
+# vuren niet — alle oude blogposts landen op de blog-index. Prima voor
+# oude posts; klaart de 404's en stuurt naar relevante content.
 /blogs                          /blog                    301
 /blogs/*                        /blog                    301
 # Oude WordPress category-archieven -> blog
