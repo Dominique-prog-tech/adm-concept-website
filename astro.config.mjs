@@ -4,6 +4,8 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import rehypeExternalLinks from 'rehype-external-links';
 
+import cloudflare from '@astrojs/cloudflare';
+
 const SITE = 'https://www.adm-concept.be';
 
 // Asymmetrische NL <-> FR slug-paren: pagina's waar de NL- en FR-slug
@@ -47,6 +49,7 @@ function findAlternates(pathname) {
 
 export default defineConfig({
   site: SITE,
+
   i18n: {
     defaultLocale: 'nl',
     locales: ['nl', 'fr'],
@@ -54,6 +57,7 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+
   markdown: {
     // Externe links in markdown-content (cases, blog) openen in een nieuw
     // tabblad met de juiste rel-attributen. Belangrijk: GEEN `nofollow` —
@@ -69,6 +73,7 @@ export default defineConfig({
       ],
     ],
   },
+
   integrations: [
     sitemap({
       i18n: {
@@ -95,7 +100,10 @@ export default defineConfig({
       },
     }),
   ],
+
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: cloudflare(),
 });
