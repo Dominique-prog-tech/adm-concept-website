@@ -4,7 +4,7 @@ customer: "Coconne"
 sector: "Architecture"
 platform: "Maatwerk"
 year: "Depuis 2018"
-summary: "Pour le bureau d'architectes Coconne, nous avons développé une plateforme en ligne complète qui soutient l'ensemble du fonctionnement opérationnel : enregistrement des temps par projet, facturation avec gestion des rappels et Peppol, rapports de chantier envoyés directement aux parties concernées, un hub de communication central et une planification hebdomadaire pour les collaborateurs, la prise en charge de plusieurs entités d'entreprise et le transfert automatique des factures vers Exact Online. Aujourd'hui, nous travaillons activement à un module de planification intelligent qui automatise la planification à travers tous les projets."
+summary: "Pour le bureau d'architectes Coconne, nous avons développé une plateforme en ligne complète qui soutient l'ensemble du fonctionnement opérationnel : enregistrement des temps par projet, facturation avec gestion des rappels et Peppol, rapports de chantier envoyés directement aux parties concernées, un hub de communication central et une planification hebdomadaire pour les collaborateurs, la prise en charge de plusieurs entités d'entreprise et le transfert automatique des factures vers Exact Online. Aujourd'hui, nous travaillons activement à un module de planification intelligent qui automatise la planification sur l'ensemble des projets."
 heroImage: "/images/office-workspace.jpg"
 customerLogo: "/images/clients/coconne.webp"
 brandColor: indigo
@@ -65,7 +65,7 @@ Sur un projet de construction, de nombreuses parties sont impliquées : maître 
 
 ## Ce qui est actuellement sur la planche à dessin : la planification intelligente
 
-Le développement sur lequel nous travaillons activement aujourd'hui est une **importante extension du module de planification**. L'objectif : une **planification globale à travers tous les projets**, pour les collaborateurs individuels — qui ont chacun leurs propres spécialisations dans différents domaines.
+Le développement sur lequel nous travaillons activement aujourd'hui est une **importante extension du module de planification**. L'objectif : une **planification globale sur l'ensemble des projets**, pour les collaborateurs individuels — qui ont chacun leurs propres spécialisations dans différents domaines.
 
 Cette planification doit organiser les tâches de manière **intelligente**, en tenant compte de deux choses à la fois :
 
