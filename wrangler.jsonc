@@ -1,0 +1,16 @@
+{
+  // Statische-assets deployment voor de ADM-Concept marketing-site.
+  //
+  // Zonder gecommitte wrangler-config draait `npx wrangler deploy` automatisch
+  // `astro add cloudflare`, wat sessions via KV inschakelt; wranglers
+  // experimentele auto-provisioning probeert dan élke deploy de KV-namespace
+  // "adm-concept-website-session" aan te maken — bestaat al na de eerste keer
+  // → fout 10014 → deploy faalt. (Zie reference_tooling_gotchas.md.)
+  //
+  // Deze site is 100% statisch (output: "static"); met deze expliciete config
+  // bouwt + deployt wrangler gewoon de statische `dist/` als assets.
+  "name": "adm-concept-website",
+  "compatibility_date": "2026-05-28",
+  "build": { "command": "npm run build" },
+  "assets": { "directory": "./dist" }
+}
