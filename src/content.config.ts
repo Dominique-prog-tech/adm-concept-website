@@ -53,6 +53,9 @@ const realisaties = defineCollection({
     platform: z.enum(["Maatwerk", "CreditSoft", "CleanOps", "Nimble"]).default("Maatwerk"),
     year: z.string(),
     summary: z.string(),
+    // Korte SEO meta-description (~150-160 tekens). Valt terug op `summary`
+    // in de template wanneer niet ingevuld.
+    metaDescription: z.string().optional(),
     heroImage: z.string().optional(),
     customerLogo: z.string().optional(),
     brandColor: z

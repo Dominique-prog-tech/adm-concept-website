@@ -45,7 +45,7 @@ const capabilitiesHeading = "Wat het platform vandaag doet";
 
 <BaseLayout
   title={`${entry.data.title} — ADM-Concept`}
-  description={entry.data.summary}
+  description={entry.data.metaDescription ?? entry.data.summary}
   ogImage={entry.data.heroImage}
 >
   <!-- Back link -->

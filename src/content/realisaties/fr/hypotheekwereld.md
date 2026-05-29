@@ -5,6 +5,7 @@ sector: "Intermédiation en crédit"
 platform: "CreditSoft"
 year: "Depuis 2020"
 summary: "Depuis 2020, CreditSoft constitue la plateforme centrale de Hypotheekwereld, le groupement belge de bureaux de crédit indépendants. Le siège gère via le back-office la production groupée, les commissions, les bordereaux et les fiches 281.50, tandis que les bureaux individuels introduisent leurs dossiers via un module portail étendu sur mesure. Récemment s'y ajoute le couplage avec BLUE pour l'introduction auprès des banques belges."
+metaDescription: "CreditSoft, plateforme centrale du groupement de bureaux de crédit Hypotheekwereld : production groupée, commissions, fiches 281.50 et couplage BLUE."
 heroImage: "/images/tech-laptop.jpg"
 customerLogo: "/images/clients/hypotheekwereld.webp"
 brandColor: slate

@@ -5,6 +5,7 @@ sector: "Kredietbemiddeling"
 platform: "CreditSoft"
 year: "Sinds 2020"
 summary: "Sinds 2020 vormt CreditSoft het centrale platform voor Hypotheekwereld, de Belgische groepering van zelfstandige kredietkantoren. De hoofdzetel beheert via de backoffice de gegroepeerde productie, commissies, borderellen en fiches 281.50, terwijl de individuele kantoren via een op maat uitgebreide portaalmodule hun dossiers indienen. Sinds kort komt daar de BLUE-koppeling bij voor indiening bij de Belgische banken."
+metaDescription: "CreditSoft als centraal platform voor kredietkantoren-groepering Hypotheekwereld: gegroepeerde productie, commissies, fiches 281.50 en BLUE-koppeling."
 heroImage: "/images/tech-laptop.jpg"
 customerLogo: "/images/clients/hypotheekwereld.webp"
 brandColor: slate

@@ -52,7 +52,7 @@ const capabilitiesHeading = "Ce que la plateforme fait aujourd'hui";
 
 <BaseLayout
   title={`${entry.data.title} — ADM-Concept`}
-  description={entry.data.summary}
+  description={entry.data.metaDescription ?? entry.data.summary}
   ogImage={entry.data.heroImage}
 >
   <section class="pt-8 lg:pt-12">

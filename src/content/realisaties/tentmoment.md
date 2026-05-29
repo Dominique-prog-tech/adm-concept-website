@@ -5,6 +5,7 @@ sector: "Event & verhuur"
 platform: "Maatwerk"
 year: "Sinds 2016"
 summary: "Sinds 2016 bouwen en evolueren we voor Tentmoment een volledig ERP-platform: van artikelbeheer met samengestelde artikelen en dynamische stockcontrole, over offertes en werkopdrachten en visuele opbouw-planning, tot facturatie via Peppol en automatische doorzetting naar Wings. Na de overname door de Veldeman-groep groeit het platform mee met de internationale opschaling."
+metaDescription: "Tien jaar maatwerk-ERP voor tentenverhuurder Tentmoment: artikelbeheer, visuele op- en afbraakplanning, facturatie via Peppol en koppeling met Wings."
 heroImage: "/images/team-collaboration.jpg"
 customerLogo: "/images/clients/tentmoment.webp"
 brandColor: amber

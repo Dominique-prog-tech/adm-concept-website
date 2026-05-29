@@ -5,6 +5,7 @@ sector: "Verzekeringen"
 platform: "Maatwerk"
 year: "Sinds 2020"
 summary: "Sinds 2020 bouwen en evolueren we voor Cares Assistance een compleet verzekeringsplatform dat polisbeheer, financiële opvolging, commissies en een tussenpersonenportaal samenbrengt. Elke maand groeit het mee met hun activiteiten — recentste mijlpaal: de Family Care productlancering."
+metaDescription: "Sinds 2020 bouwen we voor Cares Assistance een compleet verzekeringsplatform: polisbeheer, financiële opvolging, commissies en een tussenpersonenportaal."
 heroImage: "/images/business-meeting.jpg"
 customerLogo: "/images/clients/cares-assistance.webp"
 brandColor: rose

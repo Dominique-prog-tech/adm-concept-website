@@ -5,6 +5,7 @@ sector: "Architectuur"
 platform: "Maatwerk"
 year: "Sinds 2018"
 summary: "Voor architectenbureau Coconne bouwden we een volledig online platform dat de hele operationele werking ondersteunt: tijdsregistratie per project, facturatie met rappelbeheer en Peppol, werfverslagen die rechtstreeks naar de betrokken partijen vertrekken, een centrale communicatiehub en weekplanning voor de medewerkers, ondersteuning voor meerdere bedrijfsentiteiten en automatische doorsturing van de facturen naar Exact Online. Vandaag bouwen we volop aan een intelligente planningsmodule die de inplanning over alle projecten heen automatiseert."
+metaDescription: "Maatwerkplatform voor architectenbureau Coconne: tijdsregistratie, facturatie met Peppol, werfverslagen, weekplanning en koppeling met Exact Online."
 heroImage: "/images/office-workspace.jpg"
 customerLogo: "/images/clients/coconne.webp"
 brandColor: indigo

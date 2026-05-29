@@ -5,6 +5,7 @@ sector: "Assurances"
 platform: "Maatwerk"
 year: "Depuis 2020"
 summary: "Depuis 2020, nous développons et faisons évoluer pour Cares Assistance une plateforme d'assurance complète qui réunit gestion des polices, suivi financier, commissions et portail intermédiaires. Chaque mois, elle grandit avec leurs activités — dernier jalon en date : le lancement du produit Family Care."
+metaDescription: "Depuis 2020, une plateforme d'assurance complète pour Cares Assistance : gestion des polices, suivi financier, commissions et portail intermédiaires."
 heroImage: "/images/business-meeting.jpg"
 customerLogo: "/images/clients/cares-assistance.webp"
 brandColor: rose

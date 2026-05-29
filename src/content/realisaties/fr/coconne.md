@@ -5,6 +5,7 @@ sector: "Architecture"
 platform: "Maatwerk"
 year: "Depuis 2018"
 summary: "Pour le bureau d'architectes Coconne, nous avons développé une plateforme en ligne complète qui soutient l'ensemble du fonctionnement opérationnel : enregistrement des temps par projet, facturation avec gestion des rappels et Peppol, rapports de chantier envoyés directement aux parties concernées, un hub de communication central et une planification hebdomadaire pour les collaborateurs, la prise en charge de plusieurs entités d'entreprise et le transfert automatique des factures vers Exact Online. Aujourd'hui, nous travaillons activement à un module de planification intelligent qui automatise la planification sur l'ensemble des projets."
+metaDescription: "Plateforme sur mesure pour le bureau d'architectes Coconne : enregistrement des temps, facturation Peppol, rapports de chantier et lien Exact Online."
 heroImage: "/images/office-workspace.jpg"
 customerLogo: "/images/clients/coconne.webp"
 brandColor: indigo
