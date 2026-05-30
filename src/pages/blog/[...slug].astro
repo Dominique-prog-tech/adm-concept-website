@@ -146,7 +146,8 @@ const allPosts = (await getCollection("blog", ({ data }) => !data.draft && data.
 
   <style is:global>
     /* Figuur-styling voor screenshots in blog-posts: card-look met afgeronde
-       hoeken, subtiele rand en schaduw + gecentreerd cursief onderschrift. */
+       hoeken, subtiele rand en schaduw + gecentreerd cursief onderschrift.
+       Klik op de afbeelding → lightbox-preview (zie script onderaan). */
     .prose figure {
       margin-top: 2.5rem;
       margin-bottom: 2.5rem;
@@ -159,11 +160,135 @@ const allPosts = (await getCollection("blog", ({ data }) => !data.draft && data.
         0 8px 10px -6px rgb(0 0 0 / 0.06);
       width: 100%;
       height: auto;
+      cursor: zoom-in;
+      transition: transform 0.15s ease;
+    }
+    .prose figure img:hover {
+      transform: translateY(-1px);
     }
     .prose figcaption {
       text-align: center;
       color: rgb(100 116 139);
       margin-top: 0.875rem;
     }
+
+    /* Lightbox-overlay voor figuur-afbeeldingen. */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: rgb(15 23 42 / 0.94);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      cursor: zoom-out;
+    }
+    .lightbox[data-open="true"] {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lightbox img {
+      max-width: 100%;
+      max-height: calc(100vh - 8rem);
+      object-fit: contain;
+      border-radius: 0.5rem;
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+      cursor: default;
+    }
+    .lightbox-caption {
+      margin-top: 1rem;
+      color: rgb(226 232 240);
+      font-size: 0.875rem;
+      text-align: center;
+      max-width: 60rem;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .lightbox-caption:empty {
+      display: none;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 2.75rem;
+      height: 2.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgb(255 255 255 / 0.12);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .lightbox-close:hover,
+    .lightbox-close:focus-visible {
+      background: rgb(255 255 255 / 0.22);
+      outline: none;
+    }
   </style>
+
+  <!-- Lightbox-overlay (verborgen tot een figuur-afbeelding wordt aangeklikt) -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Sluiten">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg>
+    </button>
+    <img id="lightbox-img" alt="" />
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+
+  <script is:inline>
+    (function () {
+      const lightbox = document.getElementById("lightbox");
+      if (!lightbox) return;
+      const lbImg = document.getElementById("lightbox-img");
+      const lbCap = document.getElementById("lightbox-caption");
+      const closeBtn = lightbox.querySelector(".lightbox-close");
+      const imgs = document.querySelectorAll(".prose figure img");
+      if (!imgs.length) return;
+      let lastFocus = null;
+
+      function open(src, alt, captionHTML, sourceEl) {
+        lastFocus = sourceEl || null;
+        lbImg.src = src;
+        lbImg.alt = alt || "";
+        lbCap.innerHTML = captionHTML || "";
+        lightbox.dataset.open = "true";
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        setTimeout(() => closeBtn && closeBtn.focus(), 50);
+      }
+      function close() {
+        lightbox.dataset.open = "false";
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        if (lastFocus) { try { lastFocus.focus(); } catch (_) {} }
+      }
+
+      imgs.forEach((img) => {
+        img.addEventListener("click", () => {
+          const fig = img.closest("figure");
+          const cap = fig ? fig.querySelector("figcaption") : null;
+          open(img.src, img.alt, cap ? cap.innerHTML : "", img);
+        });
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox || e.target.closest(".lightbox-close")) close();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.dataset.open === "true" && e.key === "Escape") close();
+      });
+    })();
+  </script>
 </BaseLayout>
