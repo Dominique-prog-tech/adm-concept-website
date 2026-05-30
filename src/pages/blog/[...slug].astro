@@ -143,4 +143,27 @@ const allPosts = (await getCollection("blog", ({ data }) => !data.draft && data.
   }
 
   <CTA />
+
+  <style is:global>
+    /* Figuur-styling voor screenshots in blog-posts: card-look met afgeronde
+       hoeken, subtiele rand en schaduw + gecentreerd cursief onderschrift. */
+    .prose figure {
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .prose figure img {
+      border-radius: 1rem;
+      border: 1px solid rgb(226 232 240);
+      box-shadow:
+        0 10px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.06);
+      width: 100%;
+      height: auto;
+    }
+    .prose figcaption {
+      text-align: center;
+      color: rgb(100 116 139);
+      margin-top: 0.875rem;
+    }
+  </style>
 </BaseLayout>
