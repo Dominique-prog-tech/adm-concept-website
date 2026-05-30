@@ -1,0 +1,258 @@
+---
+// Kale support-pagina (zonder site-header/footer) bedoeld om binnen onze
+// desktop-applicaties in een iframe/tabblad getoond te worden.
+// Zelfde functionaliteit als /fr/support, maar compact en met extra
+// contextvelden (version, module) die de applicatie via URL-parameters
+// meegeeft, zodat support meteen weet vanuit welke versie/scherm het ticket
+// komt. Voorbeeld:
+//   /fr/support-embed?naam=Jean&bedrijf=ABC&email=jean@abc.be&platform=Sur%20mesure&version=2026.5.30&module=Fiche%20mission
+import EmbedLayout from "../../layouts/EmbedLayout.astro";
+---
+
+<EmbedLayout title="Support — ADM-Concept" lang="fr-BE">
+  <section class="py-8 px-5 sm:px-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="mb-6">
+        <div class="inline-block px-3 py-1 rounded-full bg-amber-50 border border-amber-100 text-xs font-semibold text-amber-700 mb-3">
+          Support
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+          Créer un ticket de support
+        </h1>
+        <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+          Décrivez votre question ou problème. Notre équipe vous recontactera
+          dans les meilleurs délais — chaque ticket est traité personnellement.
+        </p>
+      </div>
+
+      <!-- Message de succès -->
+      <div id="support-success" class="hidden bg-white p-8 rounded-2xl border border-emerald-200 shadow-sm text-center">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-emerald-100 flex items-center justify-center">
+          <svg class="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-3">Ticket enregistré !</h2>
+        <p class="text-slate-600 leading-relaxed">
+          Votre demande de support nous est bien parvenue. Nous l'examinons dans
+          les meilleurs délais et vous contacterons à l'adresse e-mail indiquée.
+          Vous pouvez fermer cet onglet.
+        </p>
+      </div>
+
+      <form
+        id="support-form"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm"
+      >
+        <!-- Configuration Web3Forms -->
+        <input type="hidden" name="access_key" value="0f799889-ba48-4dbd-a540-15a7f5b7b5b1" />
+        <input type="hidden" name="subject" value="Nouveau ticket de support via l'application (FR)" />
+        <input type="hidden" name="from_name" value="ADM-Concept Application (Support FR)" />
+
+        <!-- Contexte technique injecté par l'application (pré-rempli via URL) -->
+        <input type="hidden" id="version" name="version" />
+        <input type="hidden" id="module" name="module" />
+
+        <!-- Honeypot -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="naam" class="block text-sm font-medium text-slate-700 mb-2">
+                Nom <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="naam" name="naam" required
+                class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors" />
+            </div>
+            <div>
+              <label for="bedrijf" class="block text-sm font-medium text-slate-700 mb-2">
+                Entreprise <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="bedrijf" name="bedrijf" required
+                class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-2">
+                E-mail <span class="text-red-500">*</span>
+              </label>
+              <input type="email" id="email" name="email" required
+                class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors" />
+            </div>
+            <div>
+              <label for="telefoon" class="block text-sm font-medium text-slate-700 mb-2">
+                Téléphone
+              </label>
+              <input type="tel" id="telefoon" name="telefoon"
+                class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="platform" class="block text-sm font-medium text-slate-700 mb-2">
+                Plateforme <span class="text-red-500">*</span>
+              </label>
+              <select id="platform" name="platform" required
+                class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
+                <option value="">Sélectionner</option>
+                <option value="CreditSoft">CreditSoft</option>
+                <option value="CleanOps">CleanOps</option>
+                <option value="Nimble">Nimble</option>
+                <option value="Sur mesure">Sur mesure</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+            <div>
+              <label for="prioriteit" class="block text-sm font-medium text-slate-700 mb-2">
+                Priorité
+              </label>
+              <select id="prioriteit" name="prioriteit"
+                class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
+                <option value="Normale">Normale</option>
+                <option value="Élevée">Élevée</option>
+                <option value="Urgente">Urgente</option>
+                <option value="Faible">Faible</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="onderwerp" class="block text-sm font-medium text-slate-700 mb-2">
+              Sujet <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="onderwerp" name="onderwerp" required
+              placeholder="Ex. : Erreur lors de l'export PDF dans la vue dossiers"
+              class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors" />
+          </div>
+
+          <div>
+            <label for="beschrijving" class="block text-sm font-medium text-slate-700 mb-2">
+              Description <span class="text-red-500">*</span>
+            </label>
+            <textarea id="beschrijving" name="beschrijving" rows="7" required
+              placeholder="Décrivez le problème le plus concrètement possible : ce que vous tentiez de faire, ce qui s'est produit, quel message d'erreur est apparu, sur quel écran..."
+              class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"></textarea>
+          </div>
+
+          <!-- Contexte technique joint automatiquement (affiché si présent) -->
+          <p id="support-context" class="hidden text-xs text-slate-500 leading-relaxed">
+          </p>
+
+          <!-- Message d'erreur -->
+          <div id="support-error" class="hidden p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
+            Une erreur est survenue lors de l'envoi. Réessayez ou écrivez directement à
+            <a href="mailto:support@adm-concept.be" class="font-semibold underline">support@adm-concept.be</a>.
+          </div>
+
+          <div class="pt-2">
+            <button id="support-submit-btn" type="submit"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed">
+              <span id="support-submit-text">Créer le ticket</span>
+              <svg id="support-submit-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+              <svg id="support-submit-spinner" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </button>
+            <p class="mt-3 text-xs text-slate-500">
+              Vos données sont utilisées exclusivement pour traiter votre demande.
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("support-form") as HTMLFormElement | null;
+    const successDiv = document.getElementById("support-success");
+    const errorDiv = document.getElementById("support-error");
+    const contextP = document.getElementById("support-context");
+    const submitBtn = document.getElementById("support-submit-btn") as HTMLButtonElement | null;
+    const submitText = document.getElementById("support-submit-text");
+    const submitIcon = document.getElementById("support-submit-icon");
+    const submitSpinner = document.getElementById("support-submit-spinner");
+
+    // Auto-remplissage des champs via paramètres URL, injectés par l'application.
+    const params = new URLSearchParams(window.location.search);
+    const fieldMapping: Record<string, string> = {
+      platform: "platform",
+      klant: "bedrijf",
+      bedrijf: "bedrijf",
+      naam: "naam",
+      email: "email",
+      telefoon: "telefoon",
+      onderwerp: "onderwerp",
+      prioriteit: "prioriteit",
+      version: "version",
+      module: "module",
+    };
+
+    for (const [paramKey, fieldId] of Object.entries(fieldMapping)) {
+      const value = params.get(paramKey);
+      if (value) {
+        const field = document.getElementById(fieldId) as HTMLInputElement | HTMLSelectElement | null;
+        if (field) {
+          field.value = value;
+        }
+      }
+    }
+
+    // Toon de meegestuurde technische context aan de gebruiker (versie/scherm).
+    const version = params.get("version");
+    const moduleName = params.get("module");
+    if (contextP && (version || moduleName)) {
+      const parts: string[] = [];
+      if (version) parts.push("Version : " + version);
+      if (moduleName) parts.push("Écran : " + moduleName);
+      contextP.textContent =
+        "Informations techniques jointes automatiquement — " + parts.join(" · ");
+      contextP.classList.remove("hidden");
+    }
+
+    form?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      errorDiv?.classList.add("hidden");
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitText) submitText.textContent = "Envoi en cours...";
+      submitIcon?.classList.add("hidden");
+      submitSpinner?.classList.remove("hidden");
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          form.classList.add("hidden");
+          successDiv?.classList.remove("hidden");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          throw new Error(result.message || "Erreur inconnue");
+        }
+      } catch (error) {
+        console.error("Support form submission error:", error);
+        errorDiv?.classList.remove("hidden");
+
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitText) submitText.textContent = "Créer le ticket";
+        submitIcon?.classList.remove("hidden");
+        submitSpinner?.classList.add("hidden");
+      }
+    });
+  </script>
+</EmbedLayout>
